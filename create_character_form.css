@@ -1,0 +1,36 @@
+#create-character {
+  padding: 40px 0;
+}
+/* Heading */
+h1 {
+  text-align: center;
+  text-shadow: 0 2px 2px black;
+}
+.btn-group {
+  text-align: right;
+}
+/* Creatinf form section */
+.main-window {
+  border: 1px solid #ccc;
+  background: #f5e3cc77;
+  border-radius: 15px;
+  padding: 1rem;
+}
+.ch-race h2 {
+  text-align: center;
+}
+.img-container {
+  margin-top: 1rem;
+  width: 250px;
+  height: 400px;
+}
+
+.race-description {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  height: 423px;
+  padding: 1rem;
+}
+.race-description h4 {
+  margin-top: 0;
+}

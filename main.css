@@ -12,9 +12,29 @@ a {
   text-decoration: none;
   color: black;
 }
-
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  color: #f4f4f4;
+  display: inline-block;
+  background: #9d0a0e;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  text-shadow: 0 0 10px black, 1px 1px 3px black;
+  cursor: pointer;
+  width: 85px;
+}
+h1,
+h2,
+h3,
+h4,
+label {
+  color: #9d0a0e;
+}
 img {
   width: 100%;
+  vertical-align: middle;
 }
 .text-align-center {
   text-align: center;
@@ -225,7 +245,6 @@ p.start-header {
 /* Update Section */
 #update {
   padding-bottom: 50px;
-  border-bottom: 5px solid #9d0a0e;
 }
 .update-header {
   text-align: center;
@@ -273,6 +292,7 @@ p.start-header {
 /* Footer section */
 #footer {
   background: url("./img/info-bg2.jpg") no-repeat left 50% bottom -15px;
+  border-top: 5px solid #9d0a0e;
 }
 #footer .row {
   height: 230px;
