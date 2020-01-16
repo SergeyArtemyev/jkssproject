@@ -40,7 +40,9 @@
                 <h2>Choose your race</h2>
                 <div class="row">
                   <div class="col-50">
-                    <label for="races">Race</label>
+                    <div class="row">
+                      <div class="col-50">
+                        <label onclick="my()" for="races">Race</label>
                     <select oninput="myRace()" name="race" id="races">
                       <option value="human">Human</option>
                       <option value="elf">Elf</option>
@@ -52,17 +54,46 @@
                     </div>
                   </div>
                   <div class="col-50">
+                    <div class="racial-traits">
+                      <h3>Racial traits</h3>
+                      <div class="traits">
+                        <p>+1 to All Ability Scores</p>
+                        <p>Extra Language</p>
+                      </div>
+                    </div>
+                  </div>
+                      </div>
+                    </div>
+                  <div class="col-50">
                     <div class="race-description">
+                      <div id="accHelp"></div>
                       <h4>Description:</h4>
-                      <p>In the reckonings of most worlds, humans are the youngest of the common races, late to arrive on the world scene
-                        and short-lived in comparison to dwarves, elves, and
-                        dragons. Perhaps it is because of their shorter lives that
-                        they strive to achieve as much as they can in the years
-                        they are given. Or maybe they feel they have something
-                        to prove to the elder races, and that’s why they build their
-                        mighty empires on the foundation of conquest and trade.
-                        Whatever drives them, humans are the innovators, the
-                        achievers, and the pioneers of the worlds.</p>
+                      <p>Humans are the most adaptable and ambitious people among the common races. 
+                        Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.</p>
+                      <button class="accordion">Ability Score Increase</button>
+                      <div class="acc-body">
+                        <p> Your ability scores each increase by 1.</p>
+                      </div>
+                      <button class="accordion">Age</button>
+                      <div class="acc-body">
+                        <p> Humans reach adulthood in their late teens and live less than a century.</p>
+                      </div>
+                      <button class="accordion">Alignment</button>
+                      <div class="acc-body">
+                        <p> Humans tend toward no particular alignment. The best and the worst are found among them.</p>
+                      </div>
+                      <button class="accordion">Size</button>
+                      <div class="acc-body">
+                        <p> Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.</p>
+                      </div>
+                      <button class="accordion">Speed</button>
+                      <div class="acc-body">
+                        <p> Your base walking speed is 30 feet.</p>
+                      </div>
+                      <button class="accordion">Languages</button>
+                      <div class="acc-body">
+                        <p> You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -79,7 +110,7 @@
 
     <!-- Footer section -->
     <section id="footer">
-      <div class="row container">
+      <div class="row align-items-center container">
         <div class="col-33">
           <p>Developer: Jkss</p>
           <p>Project: Jkss World <span>&copy;</span></p>
