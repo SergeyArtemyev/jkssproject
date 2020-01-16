@@ -24,13 +24,53 @@ h1 {
   width: 250px;
   height: 400px;
 }
-
+.racial-traits h3 {
+  margin-top: 0;
+}
 .race-description {
   border: 1px solid #ccc;
   border-radius: 15px;
   height: 423px;
   padding: 1rem;
+  overflow: auto;
 }
 .race-description h4 {
   margin-top: 0;
+}
+/* Accordion */
+.accordion {
+  border: none;
+  font-family: inherit;
+  color: #9d0a0e;
+  font-size: 1rem;
+  display: inline-block;
+  width: 100%;
+  background: #e0d1be;
+  cursor: pointer;
+  padding: 0.2rem 0 0.3rem;
+}
+.active,
+.accordion:hover {
+  text-shadow: 0 2px 2px black;
+}
+.accordion:after {
+  content: "\002B";
+  font-size: 1.3rem;
+  color: #4caf50;
+  float: right;
+  margin-right: 16px;
+}
+.active:after {
+  content: "\2212";
+}
+.acc-body {
+  border: 1px solid #ccc;
+  padding: 0 1rem;
+  border-top: none;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  max-height: 0;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  transition: max-height 0.2s ease-out;
 }
