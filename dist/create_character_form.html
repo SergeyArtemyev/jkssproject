@@ -35,64 +35,193 @@
       <div class="container">
         <div class="main-window">
           <form id="ch-form" action="#">
+            <!-- Choose Race -->
             <div class="tab">
               <div class="ch-race">
-                <h2>Choose your race</h2>
+                <h2 class="text-align-center">Choose your race</h2>
                 <div class="row">
                   <div class="col-50">
                     <div class="row">
                       <div class="col-50">
                         <label onclick="my()" for="races">Race</label>
-                    <select oninput="myRace()" name="race" id="races">
-                      <option value="human">Human</option>
-                      <option value="elf">Elf</option>
-                      <option value="halfling">Halfling</option>
-                      <option value="dwarf">Dwarf</option>
-                    </select>
-                    <div class="img-container">
-                      <img id="race-img" src="./img/form_img/human.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="col-50">
-                    <div class="racial-traits">
-                      <h3>Racial traits</h3>
-                      <div class="traits">
-                        <p>+1 to All Ability Scores</p>
-                        <p>Extra Language</p>
+                        <select oninput="myRace()" name="race" id="races">
+                          <option value="human">Human</option>
+                          <option value="elf">Elf</option>
+                          <option value="halfling">Halfling</option>
+                          <option value="dwarf">Dwarf</option>
+                        </select>
+                        <div class="img-container">
+                          <img id="race-img" src="./img/form_img/human.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div class="col-50">
+                        <div class="racial-traits">
+                          <h3>Racial traits</h3>
+                          <div class="traits">
+                            <p>+1 to All Ability Scores</p>
+                            <label for="language">Extra Language</label>
+                            <select name="language" id="language">
+                              <option value="none">- Choose a Language -</option>
+                              <option value="none">Abyssal</option>
+                              <option value="none">Draconic</option>
+                              <option value="none">Elvish</option>
+                              <option value="none">Goblin</option>
+                              <option value="none">Halfling</option>
+                              <option value="none">Orc</option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                      </div>
-                    </div>
                   <div class="col-50">
                     <div class="race-description">
                       <div id="accHelp"></div>
                       <h4>Description:</h4>
-                      <p>Humans are the most adaptable and ambitious people among the common races. 
-                        Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.</p>
+                      <p>
+                        Humans are the most adaptable and ambitious people among the common races.
+                        Whatever drives them, humans are the innovators, the achievers, and the
+                        pioneers of the worlds.
+                      </p>
                       <button class="accordion">Ability Score Increase</button>
                       <div class="acc-body">
-                        <p> Your ability scores each increase by 1.</p>
+                        <p>Your ability scores each increase by 1.</p>
                       </div>
                       <button class="accordion">Age</button>
                       <div class="acc-body">
-                        <p> Humans reach adulthood in their late teens and live less than a century.</p>
+                        <p>
+                          Humans reach adulthood in their late teens and live less than a century.
+                        </p>
                       </div>
                       <button class="accordion">Alignment</button>
                       <div class="acc-body">
-                        <p> Humans tend toward no particular alignment. The best and the worst are found among them.</p>
+                        <p>
+                          Humans tend toward no particular alignment. The best and the worst are
+                          found among them.
+                        </p>
                       </div>
                       <button class="accordion">Size</button>
                       <div class="acc-body">
-                        <p> Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.</p>
+                        <p>
+                          Humans vary widely in height and build, from barely 5 feet to well over 6
+                          feet tall. Regardless of your position in that range, your size is Medium.
+                        </p>
                       </div>
                       <button class="accordion">Speed</button>
                       <div class="acc-body">
-                        <p> Your base walking speed is 30 feet.</p>
+                        <p>Your base walking speed is 30 feet.</p>
                       </div>
                       <button class="accordion">Languages</button>
                       <div class="acc-body">
-                        <p> You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.</p>
+                        <p>
+                          You can speak, read, and write Common and one extra language of your
+                          choice. Humans typically learn the languages of other peoples they deal
+                          with, including obscure dialects. They are fond of sprinkling their speech
+                          with words borrowed from other tongues: Orc curses, Elvish musical
+                          expressions, Dwarvish military phrases, and so on.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Chosoe Class -->
+            <div class="tab">
+              <div class="ch-class">
+                <h2 class="text-align-center">Choose your Class</h2>
+                <div class="row">
+                  <div class="col-50">
+                    <div class="row">
+                      <div class="col-50">
+                        <label for="classes">Class</label>
+                        <select oninput="myClass()" name="classes" id="classes">
+                          <option value="fighter">Fighter</option>
+                          <option value="ranger">Ranger</option>
+                          <option value="rogue">Rogue</option>
+                          <option value="sorcerer">Sorcerer</option>
+                        </select>
+                        <div class="img-container">
+                          <img id="class-img" src="./img/form_img/fighter.jpeg" alt="" />
+                        </div>
+                      </div>
+                      <div class="col-50">
+                        <div class="class-features">
+                          <div class="features">
+                            <h3>Class features</h3>
+                            <p><span class="main-color">Hit Die:</span> d10</p>
+                            <p><span class="main-color">Primary Ability:</span> Strength or Dexterity</p>
+                            <p><span class="main-color">Saves:</span> Strength & Constitution</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-50">
+                    <div class="class-description">
+                      <h4>Description:</h4>
+                      <p>
+                        A master of martial combat, skilled with a variety of weapons and armor
+                      </p>
+                      <button class="accordion">Hit Points</button>
+                      <div class="acc-body">
+                        <p><span class="main-color">Hit Dice:</span> 1d10 per fighter level</p>
+                        <p><span class="main-color">Hit Points at 1st Level:</span"> 10 + your Constitution modifier</p>
+                        <p><span class="main-color">Hit Points at Higher Levels:</span> 1d10 (or 6) + your Constitution modifier per fighter level after 1st</p>
+                      </div>
+                      <button class="accordion points">Proficiencies</button>
+                      <div class="acc-body">
+                        <p><span class="main-color">Armor:</span> All armor, shields</p>
+                        <p><span class="main-color">Weapons:</span"> Simple weapons, martial weapons</p>
+                        <p><span class="main-color">Tools:</span> None</p>
+                        <p><span class="main-color">Saving Throws:</span> Strength, Constitution</p>
+                        <p><span class="main-color">Skills:</span> Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival</p>
+                        <select name="fighter-skill" id="fighter-skill">
+                          <option value="none">- Choose a Fighter Skill -</option>
+                          <option value="acrobatics">Acrobatics</option>
+                          <option value="animalHandling">Animal Handling</option>
+                          <option value="athletics">Athletics</option>
+                          <option value="history">History</option>
+                          <option value="insight">Insight</option>
+                          <option value="intimidation">Intimidation</option>
+                          <option value="perception">Perception</option>
+                          <option value="survival">Survival</option>
+                        </select>
+                        <br>
+                        <select name="fighter-skill" id="fighter-skill">
+                          <option value="none">- Choose a Fighter Skill -</option>
+                          <option value="acrobatics">Acrobatics</option>
+                          <option value="animalHandling">Animal Handling</option>
+                          <option value="athletics">Athletics</option>
+                          <option value="history">History</option>
+                          <option value="insight">Insight</option>
+                          <option value="intimidation">Intimidation</option>
+                          <option value="perception">Perception</option>
+                          <option value="survival">Survival</option>
+                        </select>
+                      </div>
+                      <button class="accordion points">Fighting Style</button>
+                      <div class="acc-body">
+                        <p>
+                          You adopt a particular style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again.
+                        </p>
+                        <select name="fighter-style" id="fighter-style">
+                          <option value="none">- Choose an Option -</option>
+                          <option value="archery">Archery</option>
+                          <option value="defence">Defence</option>
+                          <option value="dueling">Dueling</option>
+                          <option value="greatWeapon">Great Weapon Fighting</option>
+                          <option value="protection">Protection</option>
+                          <option value="twoWeapon">Two-Weapon Fighting</option>
+                        </select>
+                      </div>
+                      <button class="accordion">Second Wind</button>
+                      <div class="acc-body">
+                        <p>
+                          You have a limited well of stamina that you can draw on to protect yourself from harm.
+                          On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level.
+                          Once you use this feature, you must finish a short or long rest before you can use it again.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -100,8 +229,12 @@
               </div>
             </div>
             <div class="btn-group">
-              <button type="button" id="prevBtn" class="btn btn-next">Previous</button>
-              <button type="button" id="nextBtn"  class="btn btn-next">Next</button type="button" id="prevBtn">
+              <button type="button" id="prevBtn" class="btn btn-next" onclick="nextPrev(-1)">
+                Previous
+              </button>
+              <button type="button" id="nextBtn" class="btn btn-next" onclick="nextPrev(1)">
+                Next
+              </button>
             </div>
           </form>
         </div>

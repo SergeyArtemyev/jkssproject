@@ -1,3 +1,8 @@
+/* Multiple steps functionality */
+.tab {
+  display: none;
+}
+
 #create-character {
   padding: 40px 0;
 }
@@ -16,17 +21,17 @@ h1 {
   border-radius: 15px;
   padding: 1rem;
 }
-.ch-race h2 {
-  text-align: center;
-}
+
 .img-container {
   margin-top: 1rem;
   width: 250px;
   height: 400px;
 }
-.racial-traits h3 {
+.racial-traits h3,
+.class-features h3 {
   margin-top: 0;
 }
+.class-description,
 .race-description {
   border: 1px solid #ccc;
   border-radius: 15px;
@@ -34,7 +39,8 @@ h1 {
   padding: 1rem;
   overflow: auto;
 }
-.race-description h4 {
+.race-description h4,
+.class-description h4 {
   margin-top: 0;
 }
 /* Accordion */
@@ -48,6 +54,15 @@ h1 {
   background: #e0d1be;
   cursor: pointer;
   padding: 0.2rem 0 0.3rem;
+  position: relative;
+}
+.points:before {
+  content: "choose options";
+  position: absolute;
+  font-size: 0.5rem;
+  color: black;
+  bottom: 0;
+  right: 47%;
 }
 .active,
 .accordion:hover {
