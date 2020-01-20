@@ -232,7 +232,7 @@ function myClass() {
       <p><span class="main-color">Tools:</span> None</p>
       <p><span class="main-color">Saving Throws:</span> Strength, Constitution</p>
       <p><span class="main-color">Skills:</span> Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival</p>
-      <select name="fighter-skill" id="fighter-skill">
+      <select name="fighter-skill">
         <option value="none">- Choose a Fighter Skill -</option>
         <option value="acrobatics">Acrobatics</option>
         <option value="animalHandling">Animal Handling</option>
@@ -244,7 +244,7 @@ function myClass() {
         <option value="survival">Survival</option>
       </select>
       <br>
-      <select name="fighter-skill" id="fighter-skill">
+      <select name="fighter-skill">
         <option value="none">- Choose a Fighter Skill -</option>
         <option value="acrobatics">Acrobatics</option>
         <option value="animalHandling">Animal Handling</option>
@@ -261,7 +261,7 @@ function myClass() {
       <p>
         You adopt a particular style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again.
       </p>
-      <select name="fighter-style" id="fighter-style">
+      <select name="fighter-style">
         <option value="none">- Choose an Option -</option>
         <option value="archery">Archery</option>
         <option value="defence">Defence</option>
@@ -280,15 +280,306 @@ function myClass() {
       </p>
     </div>
     `;
+    getAcc();
   }
   if (classes.value === "ranger") {
     img.src = "./img/form_img/ranger.jpeg";
+    features.innerHTML = `
+    <h3>Class features</h3>
+    <p><span class="main-color">Hit Die:</span> d10</p>
+    <p><span class="main-color">Primary Ability:</span> Dexterity & Wisdom</p>
+    <p><span class="main-color">Saves:</span> Strength & Dexterity</p>
+    `;
+    description.innerHTML = `
+    <h4>Description:</h4>
+    <p>
+      A warrior who combats threats on the edges of civilization
+    </p>
+    <button class="accordion">Hit Points</button>
+    <div class="acc-body">
+      <p><span class="main-color">Hit Dice:</span> 1d10 per ranger level</p>
+      <p><span class="main-color">Hit Points at 1st Level:</span"> 10 + your Constitution modifier</p>
+      <p><span class="main-color">Hit Points at Higher Levels:</span> 1d10 (or 6) + your Constitution modifier per ranger level after 1st</p>
+    </div>
+    <button class="accordion points">Proficiencies</button>
+    <div class="acc-body">
+      <p><span class="main-color">Armor:</span> Light armor, medium armor, shields</p>
+      <p><span class="main-color">Weapons:</span"> Simple weapons, martial weapons</p>
+      <p><span class="main-color">Tools:</span> None</p>
+      <p><span class="main-color">Saving Throws:</span> Strength, Dexterity</p>
+      <p><span class="main-color">Skills:</span> Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival</p>
+      <select name="ranger-skill">
+        <option value="none">- Choose a Ranger Skill -</option>
+        <option value="animalHandling">Animal Handling</option>
+        <option value="athletics">Athletics</option>
+        <option value="history">History</option>
+        <option value="insight">Insight</option>
+        <option value="investigation">Investigation</option>
+        <option value="perception">Perception</option>
+        <option value="survival">Survival</option>
+        <option value="stealth">Stealth</option>
+      </select>
+      <br>
+      <select name="ranger-skill">
+        <option value="none">- Choose a Ranger Skill -</option>
+        <option value="animalHandling">Animal Handling</option>
+        <option value="athletics">Athletics</option>
+        <option value="history">History</option>
+        <option value="insight">Insight</option>
+        <option value="investigation">Investigation</option>
+        <option value="perception">Perception</option>
+        <option value="survival">Survival</option>
+        <option value="stealth">Stealth</option>
+      </select>
+      <br>
+      <select name="ranger-skill">
+        <option value="none">- Choose a Ranger Skill -</option>
+        <option value="animalHandling">Animal Handling</option>
+        <option value="athletics">Athletics</option>
+        <option value="history">History</option>
+        <option value="insight">Insight</option>
+        <option value="investigation">Investigation</option>
+        <option value="perception">Perception</option>
+        <option value="survival">Survival</option>
+        <option value="stealth">Stealth</option>
+      </select>
+    </div>
+    <button class="accordion points">Favored Enemy</button>
+    <div class="acc-body">
+      <p>
+      Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy.
+      </p>
+      <select name="favored-enemy">
+        <option value="none">- Choose an Option -</option>
+        <option value="beasts">Beasts</option>
+        <option value="dragons">Dragons</option>
+        <option value="fey">Fey</option>
+        <option value="giants">Giants</option>
+        <option value="humanoids">Humanoids</option>
+        <option value="undead">Undead</option>
+      </select>
+      <br/>
+      <select name="language">
+        <option value="none">- Choose a Language -</option>
+        <option value="abyssal">Abyssal</option>
+        <option value="draconic">Draconic</option>
+        <option value="elvish">Elvish</option>
+        <option value="goblin">Goblin</option>
+        <option value="halfling">Halfling</option>
+        <option value="orc">Orc</option>
+    </select>
+    </div>
+    <button class="accordion points">Natural Explorer</button>
+    <div class="acc-body">
+      <p>
+      You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions.
+      </p>
+      <select name="natural-explorer">
+        <option value="none">- Choose a Level 1 Option -</option>
+        <option value="beasts">Beasts</option>
+        <option value="dragons">Dragons</option>
+        <option value="fey">Fey</option>
+        <option value="giants">Giants</option>
+        <option value="humanoids">Humanoids</option>
+        <option value="undead">Undead</option>
+      </select>
+      <br/>
+      <select name="language">
+        <option value="none">- Choose a Language -</option>
+        <option value="arctic">Arctic</option>
+        <option value="coast">Coast</option>
+        <option value="desert">Desert</option>
+        <option value="forest">Forest</option>
+        <option value="mountain">Mountain</option>
+        <option value="swamp">Swamp</option>
+    </select>
+    </div>
+    `;
+    getAcc();
   }
   if (classes.value === "rogue") {
     img.src = "./img/form_img/rogue.jpeg";
+    features.innerHTML = `
+    <h3>Class features</h3>
+    <p><span class="main-color">Hit Die:</span> d8</p>
+    <p><span class="main-color">Primary Ability:</span> Dexterity</p>
+    <p><span class="main-color">Saves:</span> Dexterity & Intelligence</p>
+    `;
+    description.innerHTML = `
+    <h4>Description:</h4>
+    <p>
+      A warrior who combats threats on the edges of civilization
+    </p>
+    <button class="accordion">Hit Points</button>
+    <div class="acc-body">
+      <p><span class="main-color">Hit Dice:</span> 1d8 per rogue level</p>
+      <p><span class="main-color">Hit Points at 1st Level:</span">  8 + your Constitution modifier</p>
+      <p><span class="main-color">Hit Points at Higher Levels:</span> 1d8 (or 5) + your Constitution modifier per rogue level after 1st</p>
+    </div>
+    <button class="accordion points">Proficiencies</button>
+    <div class="acc-body">
+      <p><span class="main-color">Armor:</span> Light armor</p>
+      <p><span class="main-color">Weapons:</span"> Simple weapons, hand crossbows, longswords, rapiers, shortswords</p>
+      <p><span class="main-color">Tools:</span> Thieves’ tools</p>
+      <p><span class="main-color">Saving Throws:</span> Dexterity, Intelligence</p>
+      <p><span class="main-color">Skills:</span> Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth</p>
+      <select name="rouge-skill">
+        <option value="none">- Choose a Rouge Skill -</option>
+        <option value="acrobatics">Acrobatics</option>
+        <option value="athletics">Athletics</option>
+        <option value="deception">Deception</option>
+        <option value="insight">Insight</option>
+        <option value="investigation">Investigation</option>
+        <option value="perception">Perception</option>
+        <option value="persuasion">Persuasion</option>
+        <option value="stealth">Stealth</option>
+      </select>
+      <br>
+      <select name="rouge-skill">
+        <option value="none">- Choose a Rouge Skill -</option>
+        <option value="acrobatics">Acrobatics</option>
+        <option value="athletics">Athletics</option>
+        <option value="deception">Deception</option>
+        <option value="insight">Insight</option>
+        <option value="investigation">Investigation</option>
+        <option value="perception">Perception</option>
+        <option value="persuasion">Persuasion</option>
+        <option value="stealth">Stealth</option>
+      </select>
+      <br>
+      <select name="rouge-skill">
+        <option value="none">- Choose a Rouge Skill -</option>
+        <option value="acrobatics">Acrobatics</option>
+        <option value="athletics">Athletics</option>
+        <option value="deception">Deception</option>
+        <option value="insight">Insight</option>
+        <option value="investigation">Investigation</option>
+        <option value="perception">Perception</option>
+        <option value="persuasion">Persuasion</option>
+        <option value="stealth">Stealth</option>
+      </select>
+      <br>
+      <select name="rouge-skill">
+        <option value="none">- Choose a Rouge Skill -</option>
+        <option value="acrobatics">Acrobatics</option>
+        <option value="athletics">Athletics</option>
+        <option value="deception">Deception</option>
+        <option value="insight">Insight</option>
+        <option value="investigation">Investigation</option>
+        <option value="perception">Perception</option>
+        <option value="persuasion">Persuasion</option>
+        <option value="stealth">Stealth</option>
+      </select>
+      <br>
+    </div>
+    <button class="accordion points">Expertise</button>
+    <div class="acc-body">
+      <p>
+      At 1st level, choose two of your skill proficiencies, 
+      or one of your skill proficiencies and your proficiency with thieves’ tools. 
+      Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.
+      </p>
+      <p>
+      At 6th level, you can choose two more of your proficiencies (in skills or with thieves’ tools) to gain this benefit.
+      </p>
+      <select name="expertise">
+        <option value="none">- Choose Rouge Expertise -</option>
+        <option value="thievesTools">Thieves' Tools</option>
+        <option value="thievesTools">Thieves' Tools</option>
+      </select>
+      <br/>
+      <select name="expertise">
+        <option value="none">- Choose Rouge Expertise -</option>
+        <option value="thievesTools">Thieves' Tools</option>
+        <option value="thievesTools">Thieves' Tools</option>
+      </select>
+    </div>
+    <button class="accordion">Sneak Attack</button>
+    <div class="acc-body">
+      <p>
+      Beginning at 1st level, you know how to strike subtly and exploit a foe’s distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.
+      </p>
+      <p>
+      You don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll.
+      </p>
+      <p>
+      The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table.
+      </p>
+    </div>
+    <button class="accordion">Thieves’ Cant</button>
+    <div class="acc-body">
+      <p>
+      During your rogue training you learned thieves’ cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves’ cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.      </p>
+      <p>
+      In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves’ guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run.      </p>
+    </div>
+    `;
+    getAcc();
   }
   if (classes.value === "sorcerer") {
     img.src = "./img/form_img/sorcerer.jpeg";
+    features.innerHTML = `
+    <h3>Class features</h3>
+    <p><span class="main-color">Hit Die:</span> d6</p>
+    <p><span class="main-color">Primary Ability:</span> Charisma</p>
+    <p><span class="main-color">Saves:</span> Constitution & Charisma</p>
+    `;
+    description.innerHTML = `
+    <h4>Description:</h4>
+    <p>
+      A spellcaster who draws on inherent magic from a gift or bloodline
+    </p>
+    <button class="accordion">Hit Points</button>
+    <div class="acc-body">
+      <p><span class="main-color">Hit Dice:</span> 1d6 per sorcerer level</p>
+      <p><span class="main-color">Hit Points at 1st Level:</span">  6 + your Constitution modifier</p>
+      <p><span class="main-color">Hit Points at Higher Levels:</span> 1d6 (or 4) + your Constitution modifier per sorcerer level after 1st</p>
+    </div>
+    <button class="accordion points">Proficiencies</button>
+    <div class="acc-body">
+      <p><span class="main-color">Armor:</span> None</p>
+      <p><span class="main-color">Weapons:</span"> Daggers, darts, slings, quarterstaffs, light crossbows</p>
+      <p><span class="main-color">Tools:</span> None</p>
+      <p><span class="main-color">Saving Throws:</span> Constitution, Charisma</p>
+      <p><span class="main-color">Skills:</span> Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion</p>
+      <select name="sorcerer-skill">
+        <option value="none">- Choose a Sorcerer Skill -</option>
+        <option value="arcana">Arcana</option>
+        <option value="deception">Deception</option>
+        <option value="insight">Insight</option>
+        <option value="intimidation">Intimidation</option>
+        <option value="persuasion">Persuasion</option>
+        <option value="religion">Religion</option>
+      </select>
+      <br>
+      <select name="sorcerer-skill">
+        <option value="none">- Choose a Sorcerer Skill -</option>
+        <option value="arcana">Arcana</option>
+        <option value="deception">Deception</option>
+        <option value="insight">Insight</option>
+        <option value="intimidation">Intimidation</option>
+        <option value="persuasion">Persuasion</option>
+        <option value="religion">Religion</option>
+      </select>
+    </div>
+    <button class="accordion">Spellcasting</button>
+    <div class="acc-body">
+      <p>
+      An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.
+      </p>
+      <p><span class="main-color">Cantrips</span></p>
+      <p>
+      At 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Sorcerer table.
+      </p>
+      <p><span class="main-color">Spell Slots</span></p>
+      <p>
+      The Sorcerer table shows how many spell slots you have to cast your sorcerer spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.
+      </p>
+      <p><span class="main-color">Spell save DC </span>= 8 + your proficiency bonus + your Charisma modifier</p>
+      <p><span class="main-color">Spell attack modifier </span>= your proficiency bonus + your Charisma modifier</p>
+    </div>
+    `;
+    getAcc();
   }
 }
 // Accordion

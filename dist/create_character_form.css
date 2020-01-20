@@ -43,6 +43,11 @@ h1 {
 .class-description h4 {
   margin-top: 0;
 }
+.class-description select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+}
 /* Accordion */
 .accordion {
   border: none;
