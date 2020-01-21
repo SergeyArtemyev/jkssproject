@@ -1,5 +1,4 @@
 // Choose Race
-getAcc();
 function myRace() {
   let description = document.getElementsByClassName("race-description")[0];
   let img = document.getElementById("race-img");
@@ -583,9 +582,11 @@ function myClass() {
   }
 }
 // Accordion
+// When you press back button you can't open accordion, you ned to switch class or race.
+// i have no idea why
 
 function getAcc() {
-  let acc = document.querySelectorAll(".accordion");
+  let acc = document.getElementsByClassName("accordion");
   for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function(e) {
       e.preventDefault();
@@ -608,6 +609,7 @@ showTab(currentTab); // Display the current tab
 function showTab(n) {
   let tab = document.getElementsByClassName("tab");
   tab[n].style.display = "block";
+  getAcc();
   // fix the previous and next button
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";

@@ -100,7 +100,12 @@ img {
 .col-50 {
   flex: 0 0 50%;
 }
-
+.col-30 {
+  flex: 0 0 30%;
+}
+.col-70 {
+  flex: 0 0 70%;
+}
 .header-container {
   text-align: center;
   width: 500px;
