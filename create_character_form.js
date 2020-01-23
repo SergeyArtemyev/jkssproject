@@ -639,3 +639,14 @@ function nextPrev(n) {
   // Otherwise, display the correct tab
   showTab(currentTab);
 }
+
+// Ability section
+let ability = document.getElementsByClassName("ability");
+for (let i = 0; i < ability.length; i++) {
+  ability[i].addEventListener("click", function(e) {
+    let description = document.getElementsByClassName("ability-description")[0];
+    if (e.target.parentElement.id == "strength") {
+      description.innerHTML = "aaa";
+    }
+  });
+}
