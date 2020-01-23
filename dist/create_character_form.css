@@ -94,3 +94,16 @@ h1 {
   margin-bottom: 0.5rem;
   transition: max-height 0.2s ease-out;
 }
+
+/* Ability score */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  text-align: left;
+  margin-right: 1rem;
+}
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.8rem;
+}
