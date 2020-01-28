@@ -106,4 +106,36 @@ th,
 td {
   border: 1px solid #ccc;
   padding: 0.5rem 0.8rem;
+  user-select: none;
+}
+.ability-input {
+  border: none;
+  width: 17px;
+  background: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.ability-input:focus {
+  outline: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.plus,
+.minus {
+  margin-left: -4px;
+  font-size: 0.9rem;
+  color: #4caf50;
+  cursor: pointer;
+  padding: 0;
+  background: unset;
+  border: none;
+}
+.plus:focus,
+.minus:focus {
+  outline: none;
+}
+.fa-minus-square {
+  visibility: hidden;
 }

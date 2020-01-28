@@ -582,22 +582,21 @@ function myClass() {
   }
 }
 // Accordion
-// When you press back button you can't open accordion, you ned to switch class or race.
-// i have no idea why
+const accListener = function(e) {
+  e.preventDefault();
+  this.classList.toggle("active");
+  let accBody = this.nextElementSibling;
+  if (accBody.style.maxHeight) {
+    accBody.style.maxHeight = null;
+  } else {
+    accBody.style.maxHeight = accBody.scrollHeight + "px";
+  }
+};
 
 function getAcc() {
   let acc = document.getElementsByClassName("accordion");
   for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function(e) {
-      e.preventDefault();
-      this.classList.toggle("active");
-      let accBody = this.nextElementSibling;
-      if (accBody.style.maxHeight) {
-        accBody.style.maxHeight = null;
-      } else {
-        accBody.style.maxHeight = accBody.scrollHeight + "px";
-      }
-    });
+    acc[i].addEventListener("click", accListener);
   }
 }
 
@@ -641,12 +640,97 @@ function nextPrev(n) {
 }
 
 // Ability section
+let remainingPoints = parseInt(document.getElementsByClassName("remaining-points")[0].innerHTML);
 let ability = document.getElementsByClassName("ability");
 for (let i = 0; i < ability.length; i++) {
   ability[i].addEventListener("click", function(e) {
     let description = document.getElementsByClassName("ability-description")[0];
     if (e.target.parentElement.id == "strength") {
-      description.innerHTML = "aaa";
+      description.innerHTML = `
+      <h3>Strength</h3>
+      <p>Strength measures bodily power, athletic training, and
+        the extent to which you can exert raw physical force.</p>
+      `;
+    }
+    if (e.target.parentElement.id == "dexterity") {
+      description.innerHTML = `
+      <h3>Dexterity</h3>
+      <p>Dexterity measures agility, reflexes, and balance.</p>
+      `;
+    }
+    if (e.target.parentElement.id == "constitution") {
+      description.innerHTML = `
+      <h3>Constitution</h3>
+      <p>Constitution measures health, stamina, and vital force.
+      </p>
+      `;
+    }
+    if (e.target.parentElement.id == "intelligence") {
+      description.innerHTML = `
+      <h3>Intelligence</h3>
+      <p>Intelligence measures mental acuity, accuracy of recall,
+      and the ability to reason.</p>
+      `;
+    }
+    if (e.target.parentElement.id == "wisdom") {
+      description.innerHTML = `
+      <h3>Wisdom</h3>
+      <p>Wisdom reflects how attuned you are to the world around
+      you and represents perceptiveness and intuition. 
+      </p>
+      `;
+    }
+    if (e.target.parentElement.id == "charisma") {
+      description.innerHTML = `
+      <h3>Charisma</h3>
+      <p>Charisma measures your ability to interact effectively
+      with others. It includes such factors as confidence and
+      eloquence, and it can represent a charming or commanding personality.</p>
+      `;
+    }
+    let plusBtn = document.getElementsByClassName("plus")[i];
+    let minusBtn = document.getElementsByClassName("minus")[i];
+    if (e.target.parentElement == plusBtn) {
+      plusAbility(i);
+    }
+    if (e.target.parentElement == minusBtn) {
+      minusAbility(i);
     }
   });
+}
+
+function plusAbility(i) {
+  let input = document.getElementsByTagName("input")[i];
+  let plus = document.getElementsByClassName("fa-plus-square")[i];
+  let minus = document.getElementsByClassName("fa-minus-square")[i];
+  document.getElementById("dis").disabled = false;
+  minus.style.visibility = "visible";
+  input.value++;
+  if (input.value <= 13) {
+    remainingPoints--;
+  } else if (input.value > 13) {
+    remainingPoints -= 2;
+  }
+  document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
+  if (input.value == 15) {
+    plus.style.display = "none";
+  }
+}
+
+function minusAbility(i) {
+  let input = document.getElementsByTagName("input")[i];
+  let plus = document.getElementsByClassName("fa-plus-square")[i];
+  let minus = document.getElementsByClassName("fa-minus-square")[i];
+  plus.style.display = "inline-block";
+  input.value--;
+  if (input.value > 12) {
+    remainingPoints += 2;
+  } else {
+    remainingPoints++;
+  }
+  document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
+  if (input.value <= 8) {
+    minus.style.visibility = "hidden";
+    document.getElementById("dis").disabled = true;
+  }
 }
