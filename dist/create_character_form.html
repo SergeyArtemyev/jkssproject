@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="create_character_form.css" />
     <link rel="stylesheet" href="main.css" />
     <title>Create Your Character</title>
@@ -238,7 +239,7 @@
                       <thead>
                         <tr>
                           <th>Abilities</th>
-                          <th>Base</th>
+                          <th>Base points</th>
                           <th>Racial Bonus</th>
                           <th>Modifier</th>
                           <th>Total</th>
@@ -247,42 +248,66 @@
                       <tbody>
                         <tr id="strength" class="ability">
                           <td>Strength</td>
-                          <td>8</td>
+                          <td>
+                            <input type="number" class ="ability-input" id="strength-points" name="strength-points" min="8" max="15" value="8"> 
+                            <button id="dis" type="button" class="minus"><i class="fa fa-minus-square"></i></button>
+                            <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
+                          </td>
                           <td>+1</td>
                           <td>-1</td>
                           <td>9</td>
                         </tr>
                         <tr id="dexterity" class="ability">
                           <td>Dexterity</td>
-                          <td>8</td>
+                          <td>
+                            <input type="number" class ="ability-input" id="dexterity-points" name="dexterity-points" min="8" max="15" value="8"> 
+                            <button id="dis" type="button" class="minus"><i class="fa fa-minus-square"></i></button>
+                            <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
+                          </td>
                           <td>+1</td>
                           <td>-1</td>
                           <td>9</td>
                         </tr>
                         <tr id="constitution" class="ability">
                           <td>Constitution</td>
-                          <td>8</td>
+                          <td>
+                            <input type="number" class ="ability-input" id="consitution-points" name="consitution-points" min="8" max="15" value="8"> 
+                            <button id="dis" type="button" class="minus"><i class="fa fa-minus-square"></i></button>
+                            <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
+                          </td>
                           <td>+1</td>
                           <td>-1</td>
                           <td>9</td>
                         </tr>
                         <tr id="intelligence" class="ability">
                           <td>Intelligence</td>
-                          <td>8</td>
+                          <td>
+                            <input type="number" class ="ability-input" id="intelligence-points" name="intelligence-points" min="8" max="15" value="8"> 
+                            <button id="dis" type="button" class="minus"><i class="fa fa-minus-square"></i></button>
+                            <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
+                          </td>
                           <td>+1</td>
                           <td>-1</td>
                           <td>9</td>
                         </tr>
                         <tr id="wisdom" class="ability">
                           <td>Wisdom</td>
-                          <td>8</td>
+                          <td>
+                            <input type="number" class ="ability-input" id="wisdom-points" name="wisdom-points" min="8" max="15" value="8"> 
+                            <button id="dis" type="button" class="minus"><i class="fa fa-minus-square"></i></button>
+                            <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
+                          </td>
                           <td>+1</td>
                           <td>-1</td>
                           <td>9</td>
                         </tr>
                         <tr id="charisma" class="ability">
                           <td>Charisma</td>
-                          <td>8</td>
+                          <td>
+                            <input type="number" class ="ability-input" id="charisma-points" name="charisma-points" min="8" max="15" value="8"> 
+                            <button id="dis" type="button" class="minus"><i class="fa fa-minus-square"></i></button>
+                            <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
+                          </td>
                           <td>+1</td>
                           <td>-1</td>
                           <td>9</td>
@@ -291,9 +316,9 @@
                     </table>
                   </div>
                   <div class="col-60">
-                    <div class="remaining-points">
+                    <div>
                       <h3>Points Remaining</h3>
-                      27 / 27
+                      <span class="remaining-points">27</span> / 27
                     </div>
                     <div class="ability-description">
                       <h3>Strength</h3>
