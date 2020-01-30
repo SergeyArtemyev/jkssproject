@@ -640,7 +640,9 @@ function nextPrev(n) {
 }
 
 // Ability section
-let remainingPoints = parseInt(document.getElementsByClassName("remaining-points")[0].innerHTML);
+// let remainingPoints = parseInt(document.getElementsByClassName("remaining-points")[0].innerHTML);
+let remainingPoints = 27;
+document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
 let ability = document.getElementsByClassName("ability");
 for (let i = 0; i < ability.length; i++) {
   ability[i].addEventListener("click", function(e) {
@@ -703,17 +705,34 @@ function plusAbility(i) {
   let input = document.getElementsByTagName("input")[i];
   let plus = document.getElementsByClassName("fa-plus-square")[i];
   let minus = document.getElementsByClassName("fa-minus-square")[i];
-  document.getElementById("dis").disabled = false;
   minus.style.visibility = "visible";
   input.value++;
-  if (input.value <= 13) {
-    remainingPoints--;
-  } else if (input.value > 13) {
+  if (input.value >= 14) {
     remainingPoints -= 2;
+  } else {
+    remainingPoints--;
   }
   document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
   if (input.value == 15) {
     plus.style.display = "none";
+  }
+  if (remainingPoints == 1) {
+    getInput();
+  }
+  if (remainingPoints == 0) {
+    for (let j = 0; j < document.getElementsByClassName("plus").length; j++) {
+      document.getElementsByClassName("plus")[j].style.visibility = "hidden";
+    }
+  }
+}
+
+function getInput() {
+  let input = document.getElementsByTagName("input");
+  let plus = document.getElementsByClassName("plus");
+  for (let i = 0; i < input.length; i++) {
+    if (input[i].value >= 13) {
+      plus[i].style.visibility = "hidden";
+    }
   }
 }
 
@@ -728,9 +747,17 @@ function minusAbility(i) {
   } else {
     remainingPoints++;
   }
+  // исправить ошибку
+  if (remainingPoints > 0) {
+    for (let j = 0; j < document.getElementsByClassName("plus").length; j++) {
+      document.getElementsByClassName("plus")[j].style.visibility = "visible";
+    }
+    if (remainingPoints == 1) {
+      getInput();
+    }
+  }
   document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
   if (input.value <= 8) {
     minus.style.visibility = "hidden";
-    document.getElementById("dis").disabled = true;
   }
 }
