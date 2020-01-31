@@ -640,9 +640,11 @@ function nextPrev(n) {
 }
 
 // Ability section
-// let remainingPoints = parseInt(document.getElementsByClassName("remaining-points")[0].innerHTML);
+let checkfortotal;
 let remainingPoints = 27;
+
 document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
+
 let ability = document.getElementsByClassName("ability");
 for (let i = 0; i < ability.length; i++) {
   ability[i].addEventListener("click", function(e) {
@@ -705,6 +707,7 @@ function plusAbility(i) {
   let input = document.getElementsByTagName("input")[i];
   let plus = document.getElementsByClassName("fa-plus-square")[i];
   let minus = document.getElementsByClassName("fa-minus-square")[i];
+  checkfortotal = true;
   minus.style.visibility = "visible";
   input.value++;
   if (input.value >= 14) {
@@ -713,6 +716,8 @@ function plusAbility(i) {
     remainingPoints--;
   }
   document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
+  document.getElementsByClassName("total")[i].innerHTML = totalPoints(i);
+
   if (input.value == 15) {
     plus.style.display = "none";
   }
@@ -736,18 +741,32 @@ function getInput() {
   }
 }
 
+function totalPoints(i) {
+  let total = document.getElementsByClassName("total")[i].innerHTML;
+  total = parseInt(total);
+  if (checkfortotal === true) {
+    total++;
+  } else {
+    total--;
+  }
+
+  return total;
+}
+
 function minusAbility(i) {
   let input = document.getElementsByTagName("input")[i];
   let plus = document.getElementsByClassName("fa-plus-square")[i];
   let minus = document.getElementsByClassName("fa-minus-square")[i];
+  checkfortotal = false;
   plus.style.display = "inline-block";
   input.value--;
+
   if (input.value > 12) {
     remainingPoints += 2;
   } else {
     remainingPoints++;
   }
-  // исправить ошибку
+
   if (remainingPoints > 0) {
     for (let j = 0; j < document.getElementsByClassName("plus").length; j++) {
       document.getElementsByClassName("plus")[j].style.visibility = "visible";
@@ -757,6 +776,8 @@ function minusAbility(i) {
     }
   }
   document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
+  document.getElementsByClassName("total")[i].innerHTML = totalPoints(i);
+
   if (input.value <= 8) {
     minus.style.visibility = "hidden";
   }
