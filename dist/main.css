@@ -33,6 +33,10 @@ label,
 .main-color {
   color: #9d0a0e;
 }
+/* padding */
+.p-1-side {
+  padding: 0 1rem;
+}
 img {
   width: 100%;
   vertical-align: middle;
@@ -45,6 +49,9 @@ img {
 }
 .align-items-center {
   align-items: center;
+}
+.justify-center {
+  justify-content: center;
 }
 .container {
   width: 60%;

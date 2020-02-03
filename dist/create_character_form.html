@@ -254,7 +254,7 @@
                             <button id="asd" type="button" class="plus"><i class="fa fa-plus-square"></i></button>
                           </td>
                           <td class="race-bonus">+1</td>
-                          <td class="modiffier">-1</td>
+                          <td class="modifier">-1</td>
                           <td class="total">9</td>
                         </tr>
                         <tr id="dexterity" class="ability">
@@ -265,7 +265,7 @@
                             <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
                           </td>
                           <td class="race-bonus">+1</td>
-                          <td class="modiffier">-1</td>
+                          <td class="modifier">-1</td>
                           <td class="total">9</td>
                         </tr>
                         <tr id="constitution" class="ability">
@@ -276,7 +276,7 @@
                             <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
                           </td>
                           <td class="race-bonus">+1</td>
-                          <td class="modiffier">-1</td>
+                          <td class="modifier">-1</td>
                           <td class="total">9</td>
                         </tr>
                         <tr id="intelligence" class="ability">
@@ -287,7 +287,7 @@
                             <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
                           </td>
                           <td class="race-bonus">+1</td>
-                          <td class="modiffier">-1</td>
+                          <td class="modifier">-1</td>
                           <td class="total">9</td>
                         </tr>
                         <tr id="wisdom" class="ability">
@@ -298,7 +298,7 @@
                             <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
                           </td>
                           <td class="race-bonus">+1</td>
-                          <td class="modiffier">-1</td>
+                          <td class="modifier">-1</td>
                           <td class="total">9</td>
                         </tr>
                         <tr id="charisma" class="ability">
@@ -309,23 +309,158 @@
                             <button type="button" class="plus"><i class="fa fa-plus-square"></i></button>
                           </td>
                           <td class="race-bonus">+1</td>
-                          <td class="modiffier">-1</td>
+                          <td class="modifier">-1</td>
                           <td class="total">9</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                   <div class="col-60">
-                    <div>
-                      <h3>Points Remaining</h3>
-                      <span class="remaining-points"></span> / 27
-                    </div>
-                    <div class="ability-description">
-                      <h3>Strength</h3>
-                      <p>Strength measures bodily power, athletic training, and
-                        the extent to which you can exert raw physical force.</p>
+                    <div class="row">
+                      <div class="col-40">
+                        <div>
+                          <h3>Points Remaining</h3>
+                          <span class="remaining-points"></span> / 27
+                        </div>
+                        <div class="ability-description">
+                          <h3>Strength</h3>
+                          <p>Strength measures bodily power, athletic training, and
+                            the extent to which you can exert raw physical force.</p>
+                        </div>
+                      </div>
+                      <div class="col-60 p-1-side text-align-center">
+                        <h3 class="text-align-center">Ability Scores and Modifiers</h3>
+                        <table class="score">
+                          <tr>
+                            <th>Score</th>
+                            <th>Modifier</th>
+                          </tr>
+                          <tr>
+                            <td>8-9</td>
+                            <td>-1</td>
+                          </tr>
+                          <tr>
+                            <td>10-11</td>
+                            <td>+0</td>
+                          </tr>
+                          <tr>
+                            <td>12-13</td>
+                            <td>+1</td>
+                          </tr>
+                          <tr>
+                            <td>14-15</td>
+                            <td>+2</td>
+                          </tr>
+                          <tr>
+                            <td>16-17</td>
+                            <td>+3</td>
+                          </tr>
+                          <tr>
+                            <td>18-19</td>
+                            <td>+4</td>
+                          </tr>
+                          <tr>
+                            <td>20-21</td>
+                            <td>+5</td>
+                          </tr>
+                        </table>
+                        <table class="score">
+                          <tr>
+                            <th>Score</th>
+                            <th>Cost</th>
+                          </tr>
+                          <tr>
+                            <td>8</td>
+                            <td>0</td>
+                          </tr>
+                          <tr>
+                            <td>9</td>
+                            <td>1</td>
+                          </tr>
+                          <tr>
+                            <td>10</td>
+                            <td>2</td>
+                          </tr>
+                          <tr>
+                            <td>11</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>12</td>
+                            <td>4</td>
+                          </tr>
+                          <tr>
+                            <td>13</td>
+                            <td>5</td>
+                          </tr>
+                          <tr>
+                            <td>14</td>
+                            <td>7</td>
+                          </tr>
+                          <tr>
+                            <td>15</td>
+                            <td>9</td>
+                          </tr>
+                        </table>
+                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <!-- Description -->
+            <div class="tab">
+              <div class="ch-description">
+                <h2 class="text-align-center">Character Description</h2>
+                <div class="change-name row justify-center">
+                  <div class="avatar">
+                    <img src="./img/avatar.png" alt="avatar">
+                  </div>
+                  <div class="name-group">
+                    <label for="char-name">Character Name</label>
+                    <br>
+                    <input type="text" name="char-name" id="char-name" placeholder="Write Your Name...">
+                  </div>
+                </div>
+                <h2 class="text-align-center">Background</h2>
+                <select name="background" oninput="myDescription()">
+                  <option value="none">--Choose an Option--</option>
+                  <option value="acolyte">Acolyte</option>
+                  <option value="spy">Criminal/Spy</option>
+                  <option value="folkHero">Folk Hero</option>
+                  <option value="hauntedOne">Haunted One</option>
+                  <option value="sage">Sage</option>
+                  <option value="soldier">Soldier</option>
+                </select>
+                <div class="desc-description">
+                  <p>
+                    You have spent your life in the service of a temple to a specific god or pantheon of gods. 
+                    You act as an intermediary between the realm of the holy and the mortal world, 
+                    performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. 
+                    You are not necessarily a cleric—performing sacred rites is not the same thing as channeling divine power.
+                  </p>
+                  <p><span class="main-color">Skill Proficiencies:</span> Insight, Religion</p>
+                  <span class="main-color">Languages:</span>
+                  <br>
+                  <select name="ad-language">
+                    <option value="none">- Choose a Language -</option>
+                    <option value="none">Abyssal</option>
+                    <option value="none">Draconic</option>
+                    <option value="none">Elvish</option>
+                    <option value="none">Goblin</option>
+                    <option value="none">Halfling</option>
+                    <option value="none">Orc</option>
+                  </select>
+                  <br>
+                  <select name="ad-language">
+                    <option value="none">- Choose a Language -</option>
+                    <option value="none">Abyssal</option>
+                    <option value="none">Draconic</option>
+                    <option value="none">Elvish</option>
+                    <option value="none">Goblin</option>
+                    <option value="none">Halfling</option>
+                    <option value="none">Orc</option>
+                  </select>
                 </div>
               </div>
             </div>
