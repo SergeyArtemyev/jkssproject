@@ -96,6 +96,9 @@ h1 {
 }
 
 /* Ability score */
+.ab-score {
+  margin-bottom: 2rem;
+}
 table {
   border-spacing: 0;
   border-collapse: collapse;
@@ -108,6 +111,20 @@ td {
   padding: 0.5rem 0.8rem;
   user-select: none;
 }
+table.score {
+  font-size: 0.8rem;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+table.score th,
+table.score td {
+  padding: 0.3rem;
+}
+table.score td {
+  font-family: initial;
+}
+
 .ability-input {
   border: none;
   width: 17px;
@@ -138,4 +155,27 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .fa-minus-square {
   visibility: hidden;
+}
+
+/* Description tab */
+.avatar {
+  width: 70px;
+  height: 70px;
+}
+.name-group {
+  padding: 0 0.5rem;
+}
+.name-group label {
+  color: #000;
+}
+#char-name {
+  margin-top: 8px;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.ch-description select {
+  width: 30%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
 }

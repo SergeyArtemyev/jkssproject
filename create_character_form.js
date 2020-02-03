@@ -581,7 +581,9 @@ function myClass() {
     getAcc();
   }
 }
-// Accordion
+// Choose Description
+function myDescription() {}
+// Helper Function to prevent overriding eventlisteners
 const accListener = function(e) {
   e.preventDefault();
   this.classList.toggle("active");
@@ -592,7 +594,7 @@ const accListener = function(e) {
     accBody.style.maxHeight = accBody.scrollHeight + "px";
   }
 };
-
+// Accordion.
 function getAcc() {
   let acc = document.getElementsByClassName("accordion");
   for (let i = 0; i < acc.length; i++) {
@@ -640,7 +642,7 @@ function nextPrev(n) {
 }
 
 // Ability section
-let checkfortotal;
+let checkfortotal; // Helper variable
 let remainingPoints = 27;
 
 document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
@@ -702,7 +704,7 @@ for (let i = 0; i < ability.length; i++) {
     }
   });
 }
-
+// function for a + button
 function plusAbility(i) {
   let input = document.getElementsByTagName("input")[i];
   let plus = document.getElementsByClassName("fa-plus-square")[i];
@@ -717,7 +719,7 @@ function plusAbility(i) {
   }
   document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
   document.getElementsByClassName("total")[i].innerHTML = totalPoints(i);
-
+  document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
   if (input.value == 15) {
     plus.style.display = "none";
   }
@@ -730,7 +732,7 @@ function plusAbility(i) {
     }
   }
 }
-
+// Hide plus buttons
 function getInput() {
   let input = document.getElementsByTagName("input");
   let plus = document.getElementsByClassName("plus");
@@ -740,7 +742,7 @@ function getInput() {
     }
   }
 }
-
+// Get total points
 function totalPoints(i) {
   let total = document.getElementsByClassName("total")[i].innerHTML;
   total = parseInt(total);
@@ -752,7 +754,29 @@ function totalPoints(i) {
 
   return total;
 }
-
+// Get modifiers
+function modifier(i) {
+  let input = document.getElementsByTagName("input")[i];
+  let modifier = document.getElementsByClassName("modifier")[i].innerHTML;
+  modifier = parseInt(modifier);
+  if (input.value == 8 || input.value == 9) {
+    modifier = -1;
+  } else if (input.value == 10 || input.value == 11) {
+    modifier = +0;
+  } else if (input.value == 12 || input.value == 13) {
+    modifier = +1;
+  } else if (input.value == 14 || input.value == 15) {
+    modifier = +2;
+  } else if (input.value == 16 || input.value == 17) {
+    modifier = +3;
+  } else if (input.value == 18 || input.value == 19) {
+    modifier = +4;
+  } else if (input.value == 20 || input.value == 21) {
+    modifier = +5;
+  }
+  return modifier;
+}
+// Function for - button
 function minusAbility(i) {
   let input = document.getElementsByTagName("input")[i];
   let plus = document.getElementsByClassName("fa-plus-square")[i];
@@ -777,6 +801,7 @@ function minusAbility(i) {
   }
   document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
   document.getElementsByClassName("total")[i].innerHTML = totalPoints(i);
+  document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
 
   if (input.value <= 8) {
     minus.style.visibility = "hidden";
