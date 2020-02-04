@@ -40,12 +40,12 @@ function myRace() {
     <label for="language">Extra Language</label>
     <select name="language" id="language">
       <option value="none">- Choose a Language -</option>
-      <option value="none">Abyssal</option>
-      <option value="none">Draconic</option>
-      <option value="none">Elvish</option>
-      <option value="none">Goblin</option>
-      <option value="none">Halfling</option>
-      <option value="none">Orc</option>
+      <option value="abyssal">Abyssal</option>
+      <option value="draconic">Draconic</option>
+      <option value="elvish">Elvish</option>
+      <option value="goblin">Goblin</option>
+      <option value="hafling">Halfling</option>
+      <option value="orc">Orc</option>
     </select>
     `;
     getAcc();
@@ -582,7 +582,259 @@ function myClass() {
   }
 }
 // Choose Description
-function myDescription() {}
+function myDescription() {
+  let description = document.getElementsByClassName("desc-description")[0];
+  let background = document.getElementById("background");
+  if (background.value === "none") {
+    description.innerHTML = "";
+  }
+  if (background.value === "acolyte") {
+    description.innerHTML = `
+    <hr>
+    <p>
+      You have spent your life in the service of a temple to a specific god or pantheon of gods. 
+      You act as an intermediary between the realm of the holy and the mortal world, 
+      performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. 
+      You are not necessarily a cleric—performing sacred rites is not the same thing as channeling divine power.
+    </p>
+    <p><span class="main-color">Skill Proficiencies:</span> Insight, Religion</p>
+    <span class="main-color">Languages:</span>
+    <br>
+    <select name="ad-language">
+      <option value="none">- Choose a Language -</option>
+      <option value="none">Abyssal</option>
+      <option value="none">Draconic</option>
+      <option value="none">Elvish</option>
+      <option value="none">Goblin</option>
+      <option value="none">Halfling</option>
+      <option value="none">Orc</option>
+    </select>
+    <br>
+    <select name="ad-language">
+      <option value="none">- Choose a Language -</option>
+      <option value="abyssal">Abyssal</option>
+      <option value="draconic">Draconic</option>
+      <option value="elvish">Elvish</option>
+      <option value="goblin">Goblin</option>
+      <option value="hafling">Halfling</option>
+      <option value="orc">Orc</option>
+    </select>
+    <button class="accordion back-feature">Shelter of the Faithful</button>
+    <div class="acc-body">
+      <p>
+        As an acolyte, you command the respect of those who share your faith, 
+        and you can perform the religious ceremonies of your deity. 
+        You and your adventuring companions can expect to receive free healing and care at a temple, 
+        shrine, or other established presence of your faith, 
+        though you must provide any material components needed for spells. 
+        Those who share your religion will support you (but only you) at a modest lifestyle.
+      </p>
+      <p>
+        You might also have ties to a specific temple dedicated to your chosen deity or pantheon, 
+        and you have a residence there. This could be the temple where you used to serve, 
+        if you remain on good terms with it, or a temple where you have found a new home. 
+        While near your temple, you can call upon the priests for assistance, 
+        provided the assistance you ask for is not hazardous and you remain in good standing with your temple.
+      </p>
+    </div>
+    `;
+    getAcc();
+  }
+  if (background.value === "spy") {
+    description.innerHTML = `
+    <hr>
+    <p>
+    You are an experienced criminal with a history of breaking the law. 
+    You have spent a lot of time among other criminals and still have contacts within the criminal underworld. 
+    You’re far closer than most people to the world of murder, theft, and violence that pervades the underbelly of civilization, 
+    and you have survived up to this point by flouting the rules and regulations of society.
+    </p>
+    <p><span class="main-color">Skill Proficiencies:</span> Deception, Stealth</p>
+    <p><span class="main-color">Tool Proficiencies:</span> Thieves' Tools</p>
+    <select name="game-set">
+      <option value="none">- Choose a Gaming Set -</option>
+      <option value="dice">Dice Set</option>
+      <option value="dragon">Dragonchess Set</option>
+      <option value="card">Playing Card Set</option>
+      <option value="three-dragon">Three-Dragon Ante Set</option>
+    </select>
+    <button class="accordion back-feature">Criminal Contact</button>
+    <div class="acc-body">
+      <p>
+      You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. 
+      You know how to get messages to and from your contact, even over great distances; specifically, 
+      you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you.
+      </p>
+    </div>
+    `;
+    getAcc();
+  }
+  if (background.value === "folkHero") {
+    description.innerHTML = `
+    <hr>
+    <p>
+    You come from a humble social rank, but you are destined for so much more. 
+    Already the people of your home village regard you as their champion, 
+    and your destiny calls you to stand against the tyrants and monsters that threaten the common folk everywhere.
+    </p>
+    <p><span class="main-color">Skill Proficiencies:</span> Animal Handling, Survival</p>
+    <p><span class="main-color">Tool Proficiencies:</span> Vehicles (Land)</p>
+    <select name="artisanTool">
+      <option value="none">- Choose a Artisan's Tool -</option>
+      <option value="alch">Alchemist's Supplies</option>
+      <option value="brew">Brewer's Supplies</option>
+      <option value="carp">Carpenter's Tools</option>
+      <option value="jeweler">Jeweler's Tools</option>
+      <option value="mason">Mason's Tools</option>
+      <option value="smith">Smith's Tools</option>
+    </select>
+    <button class="accordion back-feature">Rustic Hospitality</button>
+    <div class="acc-body">
+      <p>
+      Since you come from the ranks of the common folk, you fit in among them with ease. 
+      You can find a place to hide, rest, or recuperate among other commoners, 
+      unless you have shown yourself to be a danger to them. 
+      They will shield you from the law or anyone else searching for you, though they will not risk their lives for you.
+      </p>
+    </div>
+    `;
+    getAcc();
+  }
+  if (background.value === "hauntedOne") {
+    description.innerHTML = `
+    <hr>
+    <p>
+    You are haunted by something so terrible that you dare not speak of it. 
+    You’ve tried to bury it and run away from it, to no avail. 
+    Whatever this thing is that haunts you can’t be slain with a sword or banished with a spell. 
+    It might come to you as a shadow on the wall, a bloodcurdling nightmare, a memory that refuses to die, 
+    or a demonic whisper in the dark. The burden has taken its toll, 
+    isolating you from most people and making you question your sanity. 
+    You must find a way to overcome it before it destroys you.
+    </p>
+    <p><span class="main-color">Skill Proficiencies:</span></p>
+    <br/>
+    <select name="skill">
+      <option value="none">- Choose a Skill -</option>
+      <option value="arcana">Arcana</option>
+      <option value="investigation">Investigation</option>
+      <option value="religion">Religion</option>
+      <option value="survival">Survival</option>
+    </select>
+    <br/>
+    <select name="skill">
+      <option value="none">- Choose a Skill -</option>
+      <option value="arcana">Arcana</option>
+      <option value="investigation">Investigation</option>
+      <option value="religion">Religion</option>
+      <option value="survival">Survival</option>
+    </select>
+    <br>
+    <span class="main-color">Languages:</span>
+    <br>
+    <select name="ad-language">
+      <option value="none">- Choose an Extra Language -</option>
+      <option value="abyssal">Abyssal</option>
+      <option value="draconic">Draconic</option>
+      <option value="elvish">Elvish</option>
+      <option value="goblin">Goblin</option>
+      <option value="hafling">Halfling</option>
+      <option value="orc">Orc</option>
+    </select>
+    <button class="accordion back-feature">Heart of Darkness</button>
+    <div class="acc-body">
+      <p>
+      Those who look into your eyes can see that you have faced unimaginable horror and that you are no stranger to darkness. 
+      Though they might fear you, commoners will extend you every courtesy and do their utmost to help you. 
+      Unless you have shown yourself to be a danger to them, they will even take up arms to fight alongside you, 
+      should you find yourself facing an enemy alone.
+      </p>
+    </div>
+    `;
+    getAcc();
+  }
+  if (background.value === "sage") {
+    description.innerHTML = `
+    <hr>
+    <p>
+    You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, 
+    and listened to the greatest experts on the subjects that interest you. Your efforts have made you a master in your fields of study.
+    </p>
+    <p><span class="main-color">Skill Proficiencies:</span> Arcana, History</p>
+    <br>
+    <span class="main-color">Languages:</span>
+    <br>
+    <select name="ad-language">
+      <option value="none">- Choose an Extra Language -</option>
+      <option value="abyssal">Abyssal</option>
+      <option value="draconic">Draconic</option>
+      <option value="elvish">Elvish</option>
+      <option value="goblin">Goblin</option>
+      <option value="hafling">Halfling</option>
+      <option value="orc">Orc</option>
+    </select>
+    <br>
+    <select name="ad-language">
+      <option value="none">- Choose an Extra Language -</option>
+      <option value="abyssal">Abyssal</option>
+      <option value="draconic">Draconic</option>
+      <option value="elvish">Elvish</option>
+      <option value="goblin">Goblin</option>
+      <option value="hafling">Halfling</option>
+      <option value="orc">Orc</option>
+    </select>
+    <button class="accordion back-feature">Researcher</button>
+    <div class="acc-body">
+      <p>
+      When you attempt to learn or recall a piece of lore, if you do not know that information, 
+      you often know where and from whom you can obtain it. Usually, this information comes from a library, 
+      scriptorium, university, or a sage or other learned person or creature. 
+      Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, 
+      or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.
+      </p>
+    </div>
+    `;
+    getAcc();
+  }
+  if (background.value === "soldier") {
+    description.innerHTML = `
+    <hr>
+    <p>
+    War has been your life for as long as you care to remember. You trained as a youth, 
+    studied the use of weapons and armor, learned basic survival techniques, including how to stay alive on the battlefield. 
+    You might have been part of a standing national army or a mercenary company, 
+    or perhaps a member of a local militia who rose to prominence during a recent war.
+    </p>
+    <p>
+    When you choose this background, work with your DM to determine which military organization you were a part of, 
+    how far through its ranks you progressed, and what kind of experiences you had during your military career. 
+    Was it a standing army, a town guard, or a village militia? Or it might have been a noble’s or merchant’s private army, 
+    or a mercenary company.
+    </p>
+    <p><span class="main-color">Skill Proficiencies:</span> Athletics, Intimidation</p>
+    <p><span class="main-color">Tool Proficiencies:</span> Vehicles (Land)</p>
+    <br>
+    <select name="game-set">
+      <option value="none">- Choose a Gaming Set -</option>
+      <option value="dice">Dice Set</option>
+      <option value="dragon">Dragonchess Set</option>
+      <option value="card">Playing Card Set</option>
+      <option value="three-dragon">Three-Dragon Ante Set</option>
+    </select>
+    <button class="accordion back-feature">Military Rank</button>
+    <div class="acc-body">
+      <p>
+      You have a military rank from your career as a soldier. 
+      Soldiers loyal to your former military organization still recognize your authority and influence, 
+      and they defer to you if they are of a lower rank. 
+      You can invoke your rank to exert influence over other soldiers and requisition simple equipment or horses for temporary use. 
+      You can also usually gain access to friendly military encampments and fortresses where your rank is recognized.
+      </p>
+    </div>
+    `;
+    getAcc();
+  }
+}
 // Helper Function to prevent overriding eventlisteners
 const accListener = function(e) {
   e.preventDefault();

@@ -69,6 +69,30 @@ h1 {
   bottom: 0;
   right: 47%;
 }
+.back-feature:before {
+  content: "Background Feature";
+  position: absolute;
+  font-size: 0.5rem;
+  color: black;
+  bottom: 0;
+  right: 48%;
+}
+.char-det:before {
+  content: "Alignment - Faith - Lifestyle";
+  position: absolute;
+  font-size: 0.5rem;
+  color: black;
+  bottom: 0;
+  right: 46%;
+}
+.phys-char:before {
+  content: "Hair - Skin - Eyes - Height - Weight - Age - Gender";
+  position: absolute;
+  font-size: 0.5rem;
+  color: black;
+  bottom: 0;
+  right: 42%;
+}
 .active,
 .accordion:hover {
   text-shadow: 0 2px 2px black;
@@ -174,7 +198,8 @@ input[type="number"]::-webkit-outer-spin-button {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-.ch-description select {
+.ch-description select,
+.ch-description .acc-body input {
   width: 30%;
   padding: 0.8rem 1rem;
   margin-bottom: 0.5rem;
