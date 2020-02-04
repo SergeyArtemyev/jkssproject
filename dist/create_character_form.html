@@ -423,7 +423,7 @@
                   </div>
                 </div>
                 <h2 class="text-align-center">Background</h2>
-                <select name="background" oninput="myDescription()">
+                <select name="background" id="background" oninput="myDescription()">
                   <option value="none">--Choose an Option--</option>
                   <option value="acolyte">Acolyte</option>
                   <option value="spy">Criminal/Spy</option>
@@ -433,34 +433,73 @@
                   <option value="soldier">Soldier</option>
                 </select>
                 <div class="desc-description">
-                  <p>
-                    You have spent your life in the service of a temple to a specific god or pantheon of gods. 
-                    You act as an intermediary between the realm of the holy and the mortal world, 
-                    performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. 
-                    You are not necessarily a cleric—performing sacred rites is not the same thing as channeling divine power.
-                  </p>
-                  <p><span class="main-color">Skill Proficiencies:</span> Insight, Religion</p>
-                  <span class="main-color">Languages:</span>
+                  
+                </div>
+                <hr>
+                <button class="accordion char-det">Character Details</button>
+                <div class="acc-body">
+                  <label for="alignment">Extra Language</label>
                   <br>
-                  <select name="ad-language">
+                  <select name="alignment" id="alignment">
                     <option value="none">- Choose a Language -</option>
-                    <option value="none">Abyssal</option>
-                    <option value="none">Draconic</option>
-                    <option value="none">Elvish</option>
-                    <option value="none">Goblin</option>
-                    <option value="none">Halfling</option>
-                    <option value="none">Orc</option>
+                    <option value="ce">Chaotic Evil</option>
+                    <option value="cg">Chaotic Good</option>
+                    <option value="cn">Chaotic Neutral</option>
+                    <option value="le">Lawful Evil</option>
+                    <option value="lg">Lawful Good</option>
+                    <option value="ln">Lawful Neutral</option>
+                    <option value="n">Neutral</option>
+                    <option value="ne">Neutral Evil</option>
+                    <option value="ng">Neutral Good</option>
                   </select>
                   <br>
-                  <select name="ad-language">
+                  <label for="faith">Faith</label>
+                  <br>
+                  <input type="text" name="faith" id="faith">
+                  <br>
+                  <label for="lifestyle">Lifestyle</label>
+                  <br>
+                  <select name="lifestyle" id="lifestyle">
                     <option value="none">- Choose a Language -</option>
-                    <option value="none">Abyssal</option>
-                    <option value="none">Draconic</option>
-                    <option value="none">Elvish</option>
-                    <option value="none">Goblin</option>
-                    <option value="none">Halfling</option>
-                    <option value="none">Orc</option>
+                    <option value="wretched">Wretched</option>
+                    <option value="squalid">Squalid</option>
+                    <option value="poor">Poor</option>
+                    <option value="modest">Modest</option>
+                    <option value="comfortable">Comfortable</option>
+                    <option value="wealthy">Wealthy</option>
+                    <option value="aristocratic">Aristocratic</option>
                   </select>
+                </div>
+                <button class="accordion phys-char">Physical Characteristics</button>
+                <div class="acc-body">
+                  <label for="hair">Hair</label>
+                  <br>
+                  <input type="text" name="hair" id="hair">
+                  <br>
+                  <label for="skin">Skin</label>
+                  <br>
+                  <input type="text" name="skin" id="skin">
+                  <br>
+                  <label for="eyes">Eyes</label>
+                  <br>
+                  <input type="text" name="eyes" id="eyes">
+                  <br>
+                  <label for="height">Height</label>
+                  <br>
+                  <input type="text" name="height" id="height">
+                  <br>
+                  <label for="weight">Weight(kg)</label>
+                  <br>
+                  <input type="text" name="weight" id="weight">
+                  <br>
+                  <label for="age">Age</label>
+                  <br>
+                  <input type="text" name="age" id="age">
+                  <br>
+                  <label for="gender">Gender</label>
+                  <br>
+                  <input type="text" name="gender" id="gender">
+                  <br>
                 </div>
               </div>
             </div>
