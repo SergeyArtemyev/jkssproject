@@ -1059,3 +1059,46 @@ function minusAbility(i) {
     minus.style.visibility = "hidden";
   }
 }
+
+// Starting Equipment
+let checkboxes = document.getElementsByClassName("ch-equipment")[0].getElementsByTagName("input");
+let main = document.getElementsByClassName("main-weapon")[0];
+let secondary = document.getElementsByClassName("secondary-weapon")[0];
+let potions = document.getElementsByClassName("potions")[0];
+let stuff = document.getElementsByClassName("other-stuff")[0];
+for (let i = 0; i < checkboxes.length; i++) {
+  if (checkboxes[i].parentElement.parentElement == main) {
+    checkboxes[i].addEventListener("change", chooseEq);
+  }
+  if (checkboxes[i].parentElement.parentElement == secondary) {
+    checkboxes[i].addEventListener("change", chooseEq);
+  }
+  if (checkboxes[i].parentElement.parentElement == potions) {
+    checkboxes[i].addEventListener("change", chooseEq);
+  }
+  if (checkboxes[i].parentElement.parentElement == stuff) {
+    checkboxes[i].addEventListener("change", chooseEq);
+  }
+}
+
+function chooseEq() {
+  if (this.checked) {
+    let label = this.parentElement.parentElement.getElementsByTagName("label");
+    let input = this.parentElement.parentElement.getElementsByTagName("input");
+    for (let j = 0; j < label.length; j++) {
+      if (!input[j].checked) {
+        input[j].disabled = "true";
+        label[j].style.textDecoration = "line-through";
+      }
+    }
+  } else {
+    let label = this.parentElement.parentElement.getElementsByTagName("label");
+    let input = this.parentElement.parentElement.getElementsByTagName("input");
+    for (let j = 0; j < label.length; j++) {
+      if (!input[j].checked) {
+        input[j].disabled = "";
+        label[j].style.textDecoration = "unset";
+      }
+    }
+  }
+}
