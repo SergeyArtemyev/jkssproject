@@ -204,3 +204,16 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 0.8rem 1rem;
   margin-bottom: 0.5rem;
 }
+
+/* Starting Equipment */
+.ch-equipment label {
+  color: initial;
+}
+.main-weapon,
+.secondary-weapon,
+.potions,
+.other-stuff {
+  display: inline-block;
+  width: 49%;
+  margin-bottom: 2rem;
+}
