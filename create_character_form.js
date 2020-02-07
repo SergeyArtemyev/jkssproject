@@ -4,6 +4,11 @@ function myRace() {
   let img = document.getElementById("race-img");
   let races = document.getElementById("races");
   let traits = document.getElementsByClassName("traits")[0];
+  let raceBonus = document.getElementsByClassName("race-bonus");
+  let total = document.getElementsByClassName("total");
+  let input = document.getElementsByClassName("ability-input");
+  let plus = document.getElementsByClassName("fa-plus-square");
+  let minus = document.getElementsByClassName("fa-minus-square");
   if (races.value === "human") {
     img.src = "./img/form_img/human.jpg";
     description.innerHTML = `
@@ -48,6 +53,22 @@ function myRace() {
       <option value="orc">Orc</option>
     </select>
     `;
+    // i could create a setDefault functioun, but i have a problem with it, i'll think about it later
+    for (let i = 0; i < raceBonus.length; i++) {
+      remainingPoints = 27;
+      document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
+      minus[i].style.visibility = "hidden";
+      plus[i].style.visibility = "visible";
+      plus[i].style.display = "inline-block";
+      input[i].value = "8";
+      let ability = document.getElementsByClassName("ability");
+      if (ability[i]) {
+        raceBonus[i].innerHTML = "+1";
+        total[i].innerHTML = "9";
+        document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+      }
+    }
+
     getAcc();
   }
   if (races.value === "elf") {
@@ -110,6 +131,23 @@ function myRace() {
       <option value="orc">Orc</option>
     </select>
     `;
+    for (let i = 0; i < raceBonus.length; i++) {
+      remainingPoints = 27;
+      document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
+      minus[i].style.visibility = "hidden";
+      plus[i].style.visibility = "visible";
+      plus[i].style.display = "inline-block";
+      input[i].value = "8";
+      raceBonus[i].innerHTML = "-";
+      total[i].innerHTML = "8";
+      document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+      if (raceBonus[i].parentElement.id === "dexterity") {
+        raceBonus[i].innerHTML = "+2";
+        total[i].innerHTML = "10";
+        document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+      }
+    }
+
     getAcc();
   }
   if (races.value === "halfling") {
@@ -148,6 +186,22 @@ function myRace() {
     <p>Brave</p>
     <p>Halfling Nimbleness</p>
     `;
+    for (let i = 0; i < raceBonus.length; i++) {
+      remainingPoints = 27;
+      document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
+      minus[i].style.visibility = "hidden";
+      plus[i].style.visibility = "visible";
+      plus[i].style.display = "inline-block";
+      input[i].value = "8";
+      raceBonus[i].innerHTML = "-";
+      total[i].innerHTML = "8";
+      document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+      if (raceBonus[i].parentElement.id === "dexterity") {
+        raceBonus[i].innerHTML = "+2";
+        total[i].innerHTML = "10";
+        document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+      }
+    }
     getAcc();
   }
   if (races.value === "dwarf") {
@@ -195,6 +249,23 @@ function myRace() {
     <p>Dwarven Combat Training</p>
     <p>Stonecunning</p>
     `;
+    for (let i = 0; i < raceBonus.length; i++) {
+      remainingPoints = 27;
+      document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
+      minus[i].style.visibility = "hidden";
+      plus[i].style.visibility = "visible";
+      plus[i].style.display = "inline-block";
+      input[i].value = "8";
+      raceBonus[i].innerHTML = "-";
+      total[i].innerHTML = "8";
+      document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+      if (raceBonus[i].parentElement.id === "constitution") {
+        raceBonus[i].innerHTML = "+2";
+        total[i].innerHTML = "10";
+        document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+      }
+    }
+
     getAcc();
   }
 }
@@ -1008,26 +1079,28 @@ function totalPoints(i) {
 }
 // Get modifiers
 function modifier(i) {
-  let input = document.getElementsByTagName("input")[i];
+  let total = document.getElementsByClassName("total")[i].innerHTML;
   let modifier = document.getElementsByClassName("modifier")[i].innerHTML;
+  total = parseInt(total);
   modifier = parseInt(modifier);
-  if (input.value == 8 || input.value == 9) {
+  if (total == 8 || total == 9) {
     modifier = -1;
-  } else if (input.value == 10 || input.value == 11) {
+  } else if (total == 10 || total == 11) {
     modifier = +0;
-  } else if (input.value == 12 || input.value == 13) {
+  } else if (total == 12 || total == 13) {
     modifier = +1;
-  } else if (input.value == 14 || input.value == 15) {
+  } else if (total == 14 || total == 15) {
     modifier = +2;
-  } else if (input.value == 16 || input.value == 17) {
+  } else if (total == 16 || total == 17) {
     modifier = +3;
-  } else if (input.value == 18 || input.value == 19) {
+  } else if (total == 18 || total == 19) {
     modifier = +4;
-  } else if (input.value == 20 || input.value == 21) {
+  } else if (total == 20 || total == 21) {
     modifier = +5;
   }
   return modifier;
 }
+
 // Function for - button
 function minusAbility(i) {
   let input = document.getElementsByTagName("input")[i];
