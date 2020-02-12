@@ -61,7 +61,7 @@
                           <div class="traits">
                             <p>+1 to All Ability Scores</p>
                             <label for="language">Extra Language</label>
-                            <select name="language" id="language">
+                            <select name="extra-language" id="language">
                               <option value="none">- Choose a Language -</option>
                               <option value="none">Abyssal</option>
                               <option value="none">Draconic</option>
@@ -136,7 +136,7 @@
                     <div class="row">
                       <div class="col-50">
                         <label for="classes">Class</label>
-                        <select oninput="myClass()" name="classes" id="classes">
+                        <select oninput="myClass()" name="class" id="classes">
                           <option value="fighter">Fighter</option>
                           <option value="ranger">Ranger</option>
                           <option value="rogue">Rogue</option>
@@ -177,7 +177,7 @@
                         <p><span class="main-color">Tools:</span> None</p>
                         <p><span class="main-color">Saving Throws:</span> Strength, Constitution</p>
                         <p><span class="main-color">Skills:</span> Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival</p>
-                        <select name="fighter-skill">
+                        <select name="fighter-skill-1">
                           <option value="none">- Choose a Fighter Skill -</option>
                           <option value="acrobatics">Acrobatics</option>
                           <option value="animalHandling">Animal Handling</option>
@@ -189,7 +189,7 @@
                           <option value="survival">Survival</option>
                         </select>
                         <br>
-                        <select name="fighter-skill">
+                        <select name="fighter-skill-2">
                           <option value="none">- Choose a Fighter Skill -</option>
                           <option value="acrobatics">Acrobatics</option>
                           <option value="animalHandling">Animal Handling</option>
@@ -460,7 +460,7 @@
                   <label for="lifestyle">Lifestyle</label>
                   <br>
                   <select name="lifestyle" id="lifestyle">
-                    <option value="none">- Choose a Language -</option>
+                    <option value="none">- Choose a Lifestyle -</option>
                     <option value="wretched">Wretched</option>
                     <option value="squalid">Squalid</option>
                     <option value="poor">Poor</option>
@@ -542,7 +542,7 @@
                 <div class="potions">
                   <h3 class="text-align-center">Potions</h3>
                   <div style="text-align: left; width: 300px; margin: 0 auto;">
-                    <input type="checkbox" name="potions" id="heal">
+                    <input type="checkbox" name="potions" id="heal" value="hp">
                     <label for="heal">2 Healing Potion</label>
                     <br>
                     <input type="checkbox" name="potions" id="mana">
