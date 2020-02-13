@@ -1175,3 +1175,6 @@ function chooseEq() {
     }
   }
 }
+
+export const t = document.getElementsByClassName("total");
+console.log(t);
