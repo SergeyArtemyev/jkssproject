@@ -1,12 +1,14 @@
 {
-  "class": [
-    "fighter",
-    "rogue"
-  ],
   "fighter": {
     "description": "fighter description"
   },
-  "elf": {
+  "ranger": {
+    "description": "ranger description"
+  },
+  "rogue": {
     "description": "rogue description"
+  },
+  "sorcerer": {
+    "description": "sorcerer description"
   }
 }
