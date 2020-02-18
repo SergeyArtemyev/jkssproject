@@ -135,6 +135,12 @@ td {
   padding: 0.5rem 0.8rem;
   user-select: none;
 }
+.hidden-input {
+  width: 18px;
+  border: none;
+  background: none;
+  font: inherit;
+}
 table.score {
   font-size: 0.8rem;
   text-align: center;
