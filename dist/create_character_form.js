@@ -64,8 +64,8 @@ function myRace() {
       let ability = document.getElementsByClassName("ability");
       if (ability[i]) {
         raceBonus[i].innerHTML = "+1";
-        total[i].innerHTML = "9";
-        document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+        total[i].value = "9";
+        document.getElementsByClassName("modifier")[i].value = modifier(i);
       }
     }
 
@@ -139,12 +139,12 @@ function myRace() {
       plus[i].style.display = "inline-block";
       input[i].value = "8";
       raceBonus[i].innerHTML = "-";
-      total[i].innerHTML = "8";
-      document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+      total[i].value = "8";
+      document.getElementsByClassName("modifier")[i].value = modifier(i);
       if (raceBonus[i].parentElement.id === "dexterity") {
         raceBonus[i].innerHTML = "+2";
-        total[i].innerHTML = "10";
-        document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+        total[i].value = "10";
+        document.getElementsByClassName("modifier")[i].value = modifier(i);
       }
     }
 
@@ -194,12 +194,12 @@ function myRace() {
       plus[i].style.display = "inline-block";
       input[i].value = "8";
       raceBonus[i].innerHTML = "-";
-      total[i].innerHTML = "8";
-      document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+      total[i].value = "8";
+      document.getElementsByClassName("modifier")[i].value = modifier(i);
       if (raceBonus[i].parentElement.id === "dexterity") {
         raceBonus[i].innerHTML = "+2";
-        total[i].innerHTML = "10";
-        document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+        total[i].value = "10";
+        document.getElementsByClassName("modifier")[i].value = modifier(i);
       }
     }
     getAcc();
@@ -257,12 +257,12 @@ function myRace() {
       plus[i].style.display = "inline-block";
       input[i].value = "8";
       raceBonus[i].innerHTML = "-";
-      total[i].innerHTML = "8";
-      document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+      total[i].value = "8";
+      document.getElementsByClassName("modifier")[i].value = modifier(i);
       if (raceBonus[i].parentElement.id === "constitution") {
         raceBonus[i].innerHTML = "+2";
-        total[i].innerHTML = "10";
-        document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+        total[i].value = "10";
+        document.getElementsByClassName("modifier")[i].value = modifier(i);
       }
     }
 
@@ -907,7 +907,7 @@ function myDescription() {
   }
 }
 // Helper Function to prevent overriding eventlisteners
-const accListener = function(e) {
+const accListener = function (e) {
   e.preventDefault();
   this.classList.toggle("active");
   let accBody = this.nextElementSibling;
@@ -927,6 +927,7 @@ function getAcc() {
 
 // Multiple steps functionality
 let currentTab = 0; // Current tab is set to be the first tab
+
 showTab(currentTab); // Display the current tab
 
 // This function will display the specified tab of the form
@@ -972,7 +973,7 @@ document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoin
 
 let ability = document.getElementsByClassName("ability");
 for (let i = 0; i < ability.length; i++) {
-  ability[i].addEventListener("click", function(e) {
+  ability[i].addEventListener("click", function (e) {
     let description = document.getElementsByClassName("ability-description")[0];
     if (e.target.parentElement.id == "strength") {
       description.innerHTML = `
@@ -1029,7 +1030,7 @@ for (let i = 0; i < ability.length; i++) {
 }
 // function for a + button
 function plusAbility(i) {
-  let input = document.getElementsByTagName("input")[i];
+  let input = document.getElementsByClassName("ability-input")[i];
   let plus = document.getElementsByClassName("fa-plus-square")[i];
   let minus = document.getElementsByClassName("fa-minus-square")[i];
   checkfortotal = true;
@@ -1041,8 +1042,8 @@ function plusAbility(i) {
     remainingPoints--;
   }
   document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
-  document.getElementsByClassName("total")[i].innerHTML = totalPoints(i);
-  document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+  document.getElementsByClassName("total")[i].value = totalPoints(i);
+  document.getElementsByClassName("modifier")[i].value = modifier(i);
   if (input.value == 15) {
     plus.style.display = "none";
   }
@@ -1057,7 +1058,7 @@ function plusAbility(i) {
 }
 // Hide plus buttons
 function getInput() {
-  let input = document.getElementsByTagName("input");
+  let input = document.getElementsByClassName("ability-input");
   let plus = document.getElementsByClassName("plus");
   for (let i = 0; i < input.length; i++) {
     if (input[i].value >= 13) {
@@ -1067,7 +1068,7 @@ function getInput() {
 }
 // Get total points
 function totalPoints(i) {
-  let total = document.getElementsByClassName("total")[i].innerHTML;
+  let total = document.getElementsByClassName("total")[i].value;
   total = parseInt(total);
   if (checkfortotal === true) {
     total++;
@@ -1077,10 +1078,11 @@ function totalPoints(i) {
 
   return total;
 }
+
 // Get modifiers
 function modifier(i) {
-  let total = document.getElementsByClassName("total")[i].innerHTML;
-  let modifier = document.getElementsByClassName("modifier")[i].innerHTML;
+  let total = document.getElementsByClassName("total")[i].value;
+  let modifier = document.getElementsByClassName("modifier")[i].value;
   total = parseInt(total);
   modifier = parseInt(modifier);
   if (total == 8 || total == 9) {
@@ -1103,7 +1105,7 @@ function modifier(i) {
 
 // Function for - button
 function minusAbility(i) {
-  let input = document.getElementsByTagName("input")[i];
+  let input = document.getElementsByClassName("ability-input")[i];
   let plus = document.getElementsByClassName("fa-plus-square")[i];
   let minus = document.getElementsByClassName("fa-minus-square")[i];
   checkfortotal = false;
@@ -1125,8 +1127,8 @@ function minusAbility(i) {
     }
   }
   document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
-  document.getElementsByClassName("total")[i].innerHTML = totalPoints(i);
-  document.getElementsByClassName("modifier")[i].innerHTML = modifier(i);
+  document.getElementsByClassName("total")[i].value = totalPoints(i);
+  document.getElementsByClassName("modifier")[i].value = modifier(i);
 
   if (input.value <= 8) {
     minus.style.visibility = "hidden";

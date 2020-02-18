@@ -1,0 +1,12 @@
+{
+  "class": [
+    "fighter",
+    "rogue"
+  ],
+  "fighter": {
+    "description": "fighter description"
+  },
+  "elf": {
+    "description": "rogue description"
+  }
+}

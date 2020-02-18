@@ -1,169 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="character_sheet.css" />
-    <link rel="stylesheet" href="main.css" />
-    <title>Create Your Character</title>
-  </head>
-  <body>
-    <!-- Navbar Section -->
-    <nav class="navbar">
-      <div class="nav-container container">
-        <a href="index.html" class="nav-logo"
-          ><span class="jkss">Jkss</span><span class="world">World</span></a
-        >
-        <div class="nav-items">
-          <a href="#" class="nav-item">HOW TO PLAY</a>
-          <a href="create_character_form.html" class="nav-item">CHARACTERS</a>
-          <a href="#" class="nav-item">EMPTY</a>
-          <a href="#" class="nav-item">EMPTY</a>
-        </div>
-      </div>
-    </nav>
-    <!-- Character Sheet section -->
-    <section id="character-sheet">
-      <div class="container">
-        <!-- Heading part -->
-        <div id="heading-part" class="heading row"></div>
-        <!-- Main part -->
-        <div class="main row">
-          <!-- Ability points and Proficiencies  -->
-          <div class="row col-50 ab-prof">
-            <!-- abilities -->
-            <div class="col-25 ab">
-              <div class="ab-point border">
-                <p>str</p>
-                <p class="f-modifier">11</p>
-                <p class="ab-border f-total">11</p>
-              </div>
-              <div class="ab-point border">
-                <p>dex</p>
-                <p class="f-modifier">11</p>
-                <p class="ab-border f-total">11</p>
-              </div>
-              <div class="ab-point border">
-                <p>con</p>
-                <p class="f-modifier">11</p>
-                <p class="ab-border f-total">11</p>
-              </div>
-              <div class="ab-point border">
-                <p>int</p>
-                <p class="f-modifier">11</p>
-                <p class="ab-border f-total">11</p>
-              </div>
-              <div class="ab-point border">
-                <p>wis</p>
-                <p class="f-modifier">11</p>
-                <p class="ab-border f-total">11</p>
-              </div>
-              <div class="ab-point border">
-                <p>char</p>
-                <p class="f-modifier">11</p>
-                <p class="ab-border f-total">11</p>
-              </div>
-            </div>
-            <!-- skills -->
-            <div class="col-75 prof">
-              <div class="prof-bonus border"><span>+2</span> proficiency bonus</div>
-              <div class="savings border">
-                <p>o +0 strength</p>
-                <p>o +0 strength</p>
-                <p>o +0 strength</p>
-                <p>o +0 strength</p>
-                <p>o +0 strength</p>
-                <p>o +0 strength</p>
-                <p>saving throws</p>
-              </div>
-              <div class="skills border">
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>o +0 skill</p>
-                <p>Skills</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-50 other-features">
-            <!-- hit points -->
-            <div class="ac-init-speed row">
-              <div class="col-25 ac border text-align-center">
-                <p>15</p>
-                <p>ac</p>
-              </div>
-              <div class="col-25 init border text-align-center">
-                <p>+2</p>
-                <p>init</p>
-              </div>
-              <div class="col-25 speed border text-align-center">
-                <p>30 ft</p>
-                <p>speed</p>
-              </div>
-              <div class="col-25 hp border text-align-center">
-                <p>27</p>
-                <p>current hit points</p>
-              </div>
-            </div>
-            <!-- Tab with many things -->
-            <div class="tab-container border">
-              <div class="buttons">
-                <button type="button" class="btn-tab">equipment</button>
-                <button type="button" class="btn-tab">equipment</button>
-                <button type="button" class="btn-tab">equipment</button>
-                <button type="button" class="btn-tab">equipment</button>
-              </div>
-              <div class="tab"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Footer section -->
-    <section id="footer">
-      <div class="row align-items-center container">
-        <div class="col-33">
-          <p>Developer: Jkss</p>
-          <p>Project: Jkss World <span>&copy;</span></p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="character_sheet.css" />
+  <link rel="stylesheet" href="main.css" />
+  <title>Create Your Character</title>
+</head>
+
+<body>
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="nav-container container">
+      <a href="index.html" class="nav-logo"><span class="jkss">Jkss</span><span class="world">World</span></a>
+      <div class="nav-items">
+        <a href="#" class="nav-item">HOW TO PLAY</a>
+        <a href="create_character_form.html" class="nav-item">CHARACTERS</a>
+        <a href="#" class="nav-item">EMPTY</a>
+        <a href="#" class="nav-item">EMPTY</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Character Sheet section -->
+  <section id="character-sheet">
+    <div class="container">
+      <!-- Heading part -->
+      <div id="heading-part" class="heading row"></div>
+      <!-- Main part -->
+      <div class="main row">
+        <!-- Ability points and Proficiencies  -->
+        <div class="row col-50 ab-prof">
+          <!-- abilities -->
+          <div id="ab-div" class="col-25 ab"></div>
+          <!-- skills -->
+          <div class="col-75 prof">
+            <div class="prof-bonus border"><span>+2</span> proficiency bonus</div>
+            <div class="savings border">
+              <p>o +0 strength</p>
+              <p>o +0 strength</p>
+              <p>o +0 strength</p>
+              <p>o +0 strength</p>
+              <p>o +0 strength</p>
+              <p>o +0 strength</p>
+              <p>saving throws</p>
+            </div>
+            <div class="skills border">
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>o +0 skill</p>
+              <p>Skills</p>
+            </div>
+          </div>
         </div>
-        <div class="col-33"></div>
-        <div class="col-33 text-align-right">
-          <div class="form-group">
-            <label for="email">Subscribe to recieve news</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email.."
-              class="form-control"
-            />
-            <br />
-            <button type="submit" class="btn-sub">Subscribe</button>
+        <div class="col-50 other-features">
+          <!-- hit points -->
+          <div class="ac-init-speed row">
+            <div class="col-25 ac border text-align-center">
+              <p>15</p>
+              <p>ac</p>
+            </div>
+            <div class="col-25 init border text-align-center">
+              <p>+2</p>
+              <p>init</p>
+            </div>
+            <div class="col-25 speed border text-align-center">
+              <p>30 ft</p>
+              <p>speed</p>
+            </div>
+            <div class="col-25 hp border text-align-center">
+              <p>27</p>
+              <p>current hit points</p>
+            </div>
+          </div>
+          <!-- Tab with many things -->
+          <div class="tab-container border">
+            <div class="buttons">
+              <button id="test" type="button" class="btn-tab">equipment</button>
+              <button type="button" class="btn-tab">equipment</button>
+              <button type="button" class="btn-tab">equipment</button>
+              <button type="button" class="btn-tab">equipment</button>
+              <div id="test-div"></div>
+            </div>
+            <div class="tab"></div>
           </div>
         </div>
       </div>
-    </section>
-    <script src="character_sheet.js"></script>
-  </body>
+    </div>
+  </section>
+
+  <!-- Footer section -->
+  <section id="footer">
+    <div class="row align-items-center container">
+      <div class="col-33">
+        <p>Developer: Jkss</p>
+        <p>Project: Jkss World <span>&copy;</span></p>
+      </div>
+      <div class="col-33"></div>
+      <div class="col-33 text-align-right">
+        <div class="form-group">
+          <label for="email">Subscribe to recieve news</label>
+          <input type="email" name="email" id="email" placeholder="Enter your email.." class="form-control" />
+          <br />
+          <button type="submit" class="btn-sub">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="character_sheet.js"></script>
+  <script src="test.js"></script>
+</body>
+
 </html>

@@ -11,6 +11,18 @@ const fighterStyle = words.get("fighter-style");
 const charName = words.get("char-name");
 const background = words.get("background");
 const alignment = words.get("alignment");
+const str = words.get('strength-points');
+const dex = words.get('dexterity-points');
+const con = words.get('constitution-points');
+const int = words.get('intelligence-points');
+const wis = words.get('wisdom-points');
+const char = words.get('charisma-points');
+const strMod = words.get('str-mod');
+const dexMod = words.get('dex-mod');
+const conMod = words.get('con-mod');
+const intMod = words.get('int-mod');
+const wisMod = words.get('wis-mod');
+const charMod = words.get('char-mod');
 
 // the string that will populate the character sheet page
 const headingPart = `
@@ -48,3 +60,43 @@ const headingPart = `
 const headingPartVar = document.getElementById("heading-part");
 // populate the heading part with charSheet var
 headingPartVar.innerHTML = headingPart;
+
+// Populate ability points section
+const abilityPoints =
+  `
+<div class="ab-point border">
+  <p>str</p>
+  <p class="f-modifier">${strMod}</p>
+  <p class="ab-border f-total">${str}</p>
+</div>
+<div class="ab-point border">
+  <p>dex</p>
+  <p class="f-modifier">${dexMod}</p>
+  <p class="ab-border f-total">${dex}</p>
+</div>
+<div class="ab-point border">
+  <p>con</p>
+  <p class="f-modifier">${conMod}</p>
+  <p class="ab-border f-total">${con}</p>
+</div>
+<div class="ab-point border">
+  <p>int</p>
+  <p class="f-modifier">${intMod}</p>
+  <p class="ab-border f-total">${int}</p>
+</div>
+<div class="ab-point border">
+  <p>wis</p>
+  <p class="f-modifier">${wisMod}</p>
+  <p class="ab-border f-total">${wis}</p>
+</div>
+<div class="ab-point border">
+  <p>char</p>
+  <p class="f-modifier">${charMod}</p>
+  <p class="ab-border f-total">${char}</p>
+</div>
+`;
+// Grab the ability points dib
+const abilityPointsDiv = document.getElementById("ab-div");
+// populate the heading part with charSheet var
+abilityPointsDiv.innerHTML = abilityPoints;
+
