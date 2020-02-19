@@ -95,8 +95,115 @@ const abilityPoints =
   <p class="ab-border f-total">${char}</p>
 </div>
 `;
-// Grab the ability points dib
+// Grab the ability points div
 const abilityPointsDiv = document.getElementById("ab-div");
 // populate the heading part with charSheet var
 abilityPointsDiv.innerHTML = abilityPoints;
 
+// Create helper function ti get saving throws
+function getSaving(s = 0, d = 0, c = 0, i = 0, w = 0, ch = 0) {
+  if (classes === "ranger" || classes === "fighter") {
+    s = 2;
+  }
+  if (classes === "sorcerer" || classes === "fighter") {
+    c = 2;
+  }
+  if (classes === "ranger" || classes === "rogue") {
+    d = 2;
+  }
+  if (classes === "sorcerer") {
+    ch = 2;
+  }
+  if (classes === "rogue") {
+    i = 2;
+  }
+
+  return { s, d, c, i, w, ch };
+}
+
+// Populate the savings throws section 
+const savingThrows =
+  `
+<p> ${+strMod + getSaving().s} Strength</p>
+<p> ${+dexMod + getSaving().d} Dexterity</p>
+<p> ${+conMod + getSaving().c} Constitution</p>
+<p> ${+intMod + getSaving().i} Intelligence</p>
+<p> ${+wisMod + getSaving().w} Wisdom</p>
+<p> ${+charMod + getSaving().ch} Charisma</p>
+<p>saving throws</p>
+`;
+
+// Grab the savings throws div
+const savingsThrowsDiv = document.getElementById("savings");
+// Populate the saving div with var
+savingsThrowsDiv.innerHTML = savingThrows;
+
+// Get ac init speed hp
+function getAcInSpHp() {
+  let ac, init, speed, hp;
+  if (race === "human" || race === "elf") {
+    speed = 30;
+  } else {
+    speed = 25;
+  }
+  if (classes === "fighter" || classes === "ranger") {
+    hp = 10 + (+conMod);
+  }
+  if (classes === "rogue") {
+    hp = 8 + (+conMod);
+  }
+  if (classes === "sorcerer") {
+    hp = 6 + (+conMod);
+  }
+  return { speed, hp }
+}
+// Populate ac-init-speed-hp div
+const acInSpHp =
+  `
+<div class="col-25 ac border text-align-center">
+  <p>15</p>
+  <p>ac</p>
+</div>
+<div class="col-25 init border text-align-center">
+  <p>${dexMod}</p>
+  <p>init</p>
+</div>
+<div class="col-25 speed border text-align-center">
+  <p>${getAcInSpHp().speed} ft</p>
+  <p>speed</p>
+</div>
+<div class="col-25 hp border text-align-center">
+  <p>${getAcInSpHp().hp}</p>
+  <p>current hit points</p>
+</div>
+`;
+
+// Grab the ac-in-sp-hp div
+const acInSpHpDiv = document.getElementById("ac-in-sp-hp");
+// Populate the div
+acInSpHpDiv.innerHTML = acInSpHp;
+
+// THE DESCRIPTION PART WITH TABS
+
+// Tab Functionality
+function openTab(e, tabName) {
+  // Declare variables
+  let i, tabcontent, btnTab;
+  // Get all elements with class -tabcontent and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class btnTab and remove class active
+  btnTab = document.getElementsByClassName("btn-tab");
+  for (i = 0; i < btnTab.length; i++) {
+    btnTab[i].className = btnTab[i].className.replace(" active", "");
+  }
+  // Show the current tab and add active class to the button that opened tab
+  document.getElementById(tabName).style.display = "block";
+  e.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+
+// 
