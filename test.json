@@ -1,6 +1,6 @@
 {
   "fighter": {
-    "description": "fighter description"
+    "proficiencies": "<ul><li></li></ul>"
   },
   "ranger": {
     "description": "ranger description"

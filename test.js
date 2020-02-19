@@ -9,9 +9,9 @@ function testFunc(e) {
 
       const output =
         `
-            <h2>${classes}</h2>
-            <p>${response[classes].description}</p>
-            `;
+        <h2>${classes} Features</h2>
+        <p>${response[classes].description}</p>
+        `;
       document.getElementById("test-div").innerHTML = output;
     }
   }
