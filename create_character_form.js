@@ -9,7 +9,7 @@ function myRace() {
   let input = document.getElementsByClassName("ability-input");
   let plus = document.getElementsByClassName("fa-plus-square");
   let minus = document.getElementsByClassName("fa-minus-square");
-  if (races.value === "human") {
+  if (races.value === "Human") {
     img.src = "./img/form_img/human.jpg";
     description.innerHTML = `
     <h4>Description:</h4>
@@ -43,14 +43,14 @@ function myRace() {
     traits.innerHTML = `
     <p>+1 to All Ability Scores</p>
     <label for="language">Extra Language</label>
-    <select name="language" id="language">
+    <select name="extra-language" id="language">
       <option value="none">- Choose a Language -</option>
-      <option value="abyssal">Abyssal</option>
-      <option value="draconic">Draconic</option>
-      <option value="elvish">Elvish</option>
-      <option value="goblin">Goblin</option>
-      <option value="hafling">Halfling</option>
-      <option value="orc">Orc</option>
+      <option value="Abyssal">Abyssal</option>
+      <option value="Draconic">Draconic</option>
+      <option value="Elvish">Elvish</option>
+      <option value="Goblin">Goblin</option>
+      <option value="Hafling">Halfling</option>
+      <option value="Orc">Orc</option>
     </select>
     `;
     // i could create a setDefault functioun, but i have a problem with it, i'll think about it later
@@ -71,7 +71,7 @@ function myRace() {
 
     getAcc();
   }
-  if (races.value === "elf") {
+  if (races.value === "Elf") {
     img.src = "./img/form_img/elf.jpg";
     description.innerHTML = `
     <h4>Description:</h4>
@@ -111,24 +111,24 @@ function myRace() {
     <br/>
     <select name="cantrip" id="cantrip">
       <option value="none">- Choose a Spell -</option>
-      <option value="ctrlFlames">Control Flames</option>
-      <option value="gust">Gust</option>
-      <option value="frostBite">Frost Bite</option>
-      <option value="light">Light</option>
-      <option value="mirIllusion">Minor Illusion</option>
-      <option value="trueStrike">True Strike</option>
+      <option value="Control Flames">Control Flames</option>
+      <option value="Gust">Gust</option>
+      <option value="Frost Bite">Frost Bite</option>
+      <option value="Light">Light</option>
+      <option value="Minor Illusion">Minor Illusion</option>
+      <option value="True Strike">True Strike</option>
     </select>
     <br/>
     <label for="language">Extra Language</label>
     <br/>
-    <select name="language" id="language">
+    <select name="extra-language" id="language">
       <option value="none">- Choose a Language -</option>
-      <option value="abyssal">Abyssal</option>
-      <option value="draconic">Draconic</option>
-      <option value="elvish">Elvish</option>
-      <option value="goblin">Goblin</option>
-      <option value="halfling">Halfling</option>
-      <option value="orc">Orc</option>
+      <option value="Abyssal">Abyssal</option>
+      <option value="Draconic">Draconic</option>
+      <option value="Elvish">Elvish</option>
+      <option value="Goblin">Goblin</option>
+      <option value="Halfling">Halfling</option>
+      <option value="Orc">Orc</option>
     </select>
     `;
     for (let i = 0; i < raceBonus.length; i++) {
@@ -150,7 +150,7 @@ function myRace() {
 
     getAcc();
   }
-  if (races.value === "halfling") {
+  if (races.value === "Halfling") {
     img.src = "./img/form_img/orc.png";
     description.innerHTML = `
     <h4>Description:</h4>
@@ -204,7 +204,7 @@ function myRace() {
     }
     getAcc();
   }
-  if (races.value === "dwarf") {
+  if (races.value === "Dwarf") {
     img.src = "./img/form_img/dwarf.jpg";
     description.innerHTML = `
     <h4>Description:</h4>
@@ -242,9 +242,9 @@ function myRace() {
     <br/>
     <select name="toolProf" id="toolProf">
       <option value="none">- Choose a Dwarf Artisan's Tool -</option>
-      <option value="brewer">Brewer's Supplies</option>
-      <option value="mason">Mason's Tools</option>
-      <option value="smith">Smith's Tools</option>
+      <option value="Brewer's Supplies">Brewer's Supplies</option>
+      <option value="Mason's Tools">Mason's Tools</option>
+      <option value="Smith's Tools">Smith's Tools</option>
     </select>
     <p>Dwarven Combat Training</p>
     <p>Stonecunning</p>
@@ -276,7 +276,7 @@ function myClass() {
   let img = document.getElementById("class-img");
   let classes = document.getElementById("classes");
   let features = document.getElementsByClassName("features")[0];
-  if (classes.value === "fighter") {
+  if (classes.value === "Fighter") {
     img.src = "./img/form_img/fighter.jpeg";
     features.innerHTML = `
     <h3>Class features</h3>
@@ -302,28 +302,28 @@ function myClass() {
       <p><span class="main-color">Tools:</span> None</p>
       <p><span class="main-color">Saving Throws:</span> Strength, Constitution</p>
       <p><span class="main-color">Skills:</span> Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival</p>
-      <select name="fighter-skill">
+      <select name="fighter-skill-1">
         <option value="none">- Choose a Fighter Skill -</option>
-        <option value="acrobatics">Acrobatics</option>
-        <option value="animalHandling">Animal Handling</option>
-        <option value="athletics">Athletics</option>
-        <option value="history">History</option>
-        <option value="insight">Insight</option>
-        <option value="intimidation">Intimidation</option>
-        <option value="perception">Perception</option>
-        <option value="survival">Survival</option>
+        <option value="Acrobatics">Acrobatics</option>
+        <option value="Animal Handling">Animal Handling</option>
+        <option value="Athletics">Athletics</option>
+        <option value="History">History</option>
+        <option value="Insight">Insight</option>
+        <option value="Intimidation">Intimidation</option>
+        <option value="Perception">Perception</option>
+        <option value="Survival">Survival</option>
       </select>
       <br>
-      <select name="fighter-skill">
+      <select name="fighter-skill-2">
         <option value="none">- Choose a Fighter Skill -</option>
-        <option value="acrobatics">Acrobatics</option>
-        <option value="animalHandling">Animal Handling</option>
-        <option value="athletics">Athletics</option>
-        <option value="history">History</option>
-        <option value="insight">Insight</option>
-        <option value="intimidation">Intimidation</option>
-        <option value="perception">Perception</option>
-        <option value="survival">Survival</option>
+        <option value="Acrobatics">Acrobatics</option>
+        <option value="Animal Handling">Animal Handling</option>
+        <option value="Athletics">Athletics</option>
+        <option value="History">History</option>
+        <option value="Insight">Insight</option>
+        <option value="Intimidation">Intimidation</option>
+        <option value="Perception">Perception</option>
+        <option value="Survival">Survival</option>
       </select>
     </div>
     <button class="accordion points">Fighting Style</button>
@@ -333,12 +333,12 @@ function myClass() {
       </p>
       <select name="fighter-style">
         <option value="none">- Choose an Option -</option>
-        <option value="archery">Archery</option>
-        <option value="defence">Defence</option>
-        <option value="dueling">Dueling</option>
-        <option value="greatWeapon">Great Weapon Fighting</option>
-        <option value="protection">Protection</option>
-        <option value="twoWeapon">Two-Weapon Fighting</option>
+        <option value="Archery">Archery</option>
+        <option value="Defence">Defence</option>
+        <option value="Dueling">Dueling</option>
+        <option value="Great Weapon Fighting">Great Weapon Fighting</option>
+        <option value="Protection">Protection</option>
+        <option value="Two-Weapon Fighting">Two-Weapon Fighting</option>
       </select>
     </div>
     <button class="accordion">Second Wind</button>
@@ -352,7 +352,7 @@ function myClass() {
     `;
     getAcc();
   }
-  if (classes.value === "ranger") {
+  if (classes.value === "Ranger") {
     img.src = "./img/form_img/ranger.jpeg";
     features.innerHTML = `
     <h3>Class features</h3>
@@ -378,40 +378,40 @@ function myClass() {
       <p><span class="main-color">Tools:</span> None</p>
       <p><span class="main-color">Saving Throws:</span> Strength, Dexterity</p>
       <p><span class="main-color">Skills:</span> Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival</p>
-      <select name="ranger-skill">
+      <select name="ranger-skill-1">
         <option value="none">- Choose a Ranger Skill -</option>
-        <option value="animalHandling">Animal Handling</option>
-        <option value="athletics">Athletics</option>
-        <option value="history">History</option>
-        <option value="insight">Insight</option>
-        <option value="investigation">Investigation</option>
-        <option value="perception">Perception</option>
-        <option value="survival">Survival</option>
-        <option value="stealth">Stealth</option>
+        <option value="Animal Handling">Animal Handling</option>
+        <option value="Athletics">Athletics</option>
+        <option value="History">History</option>
+        <option value="Insight">Insight</option>
+        <option value="Investigation">Investigation</option>
+        <option value="Perception">Perception</option>
+        <option value="Survival">Survival</option>
+        <option value="Stealth">Stealth</option>
       </select>
       <br>
-      <select name="ranger-skill">
+      <select name="ranger-skill-2">
         <option value="none">- Choose a Ranger Skill -</option>
-        <option value="animalHandling">Animal Handling</option>
-        <option value="athletics">Athletics</option>
-        <option value="history">History</option>
-        <option value="insight">Insight</option>
-        <option value="investigation">Investigation</option>
-        <option value="perception">Perception</option>
-        <option value="survival">Survival</option>
-        <option value="stealth">Stealth</option>
+        <option value="Animal Handling">Animal Handling</option>
+        <option value="Athletics">Athletics</option>
+        <option value="History">History</option>
+        <option value="Insight">Insight</option>
+        <option value="Investigation">Investigation</option>
+        <option value="Perception">Perception</option>
+        <option value="Survival">Survival</option>
+        <option value="Stealth">Stealth</option>
       </select>
       <br>
-      <select name="ranger-skill">
+      <select name="ranger-skill-3">
         <option value="none">- Choose a Ranger Skill -</option>
-        <option value="animalHandling">Animal Handling</option>
-        <option value="athletics">Athletics</option>
-        <option value="history">History</option>
-        <option value="insight">Insight</option>
-        <option value="investigation">Investigation</option>
-        <option value="perception">Perception</option>
-        <option value="survival">Survival</option>
-        <option value="stealth">Stealth</option>
+        <option value="Animal Handling">Animal Handling</option>
+        <option value="Athletics">Athletics</option>
+        <option value="History">History</option>
+        <option value="Insight">Insight</option>
+        <option value="Investigation">Investigation</option>
+        <option value="Perception">Perception</option>
+        <option value="Survival">Survival</option>
+        <option value="Stealth">Stealth</option>
       </select>
     </div>
     <button class="accordion points">Favored Enemy</button>
@@ -421,22 +421,22 @@ function myClass() {
       </p>
       <select name="favored-enemy">
         <option value="none">- Choose an Option -</option>
-        <option value="beasts">Beasts</option>
-        <option value="dragons">Dragons</option>
-        <option value="fey">Fey</option>
-        <option value="giants">Giants</option>
-        <option value="humanoids">Humanoids</option>
-        <option value="undead">Undead</option>
+        <option value="Beasts">Beasts</option>
+        <option value="Dragons">Dragons</option>
+        <option value="Fey">Fey</option>
+        <option value="Giants">Giants</option>
+        <option value="Humanoids">Humanoids</option>
+        <option value="Undead">Undead</option>
       </select>
       <br/>
       <select name="language">
         <option value="none">- Choose a Language -</option>
-        <option value="abyssal">Abyssal</option>
-        <option value="draconic">Draconic</option>
-        <option value="elvish">Elvish</option>
-        <option value="goblin">Goblin</option>
-        <option value="halfling">Halfling</option>
-        <option value="orc">Orc</option>
+        <option value="Abyssal">Abyssal</option>
+        <option value="Draconic">Draconic</option>
+        <option value="Elvish">Elvish</option>
+        <option value="Goblin">Goblin</option>
+        <option value="Halfling">Halfling</option>
+        <option value="Orc">Orc</option>
     </select>
     </div>
     <button class="accordion points">Natural Explorer</button>
@@ -446,28 +446,19 @@ function myClass() {
       </p>
       <select name="natural-explorer">
         <option value="none">- Choose a Level 1 Option -</option>
-        <option value="beasts">Beasts</option>
-        <option value="dragons">Dragons</option>
-        <option value="fey">Fey</option>
-        <option value="giants">Giants</option>
-        <option value="humanoids">Humanoids</option>
-        <option value="undead">Undead</option>
+        <option value="Arctic">Arctic</option>
+        <option value="Coast">Coast</option>
+        <option value="Desert">Desert</option>
+        <option value="Forest">Forest</option>
+        <option value="Mountain">Mountain</option>
+        <option value="Swamp">Swamp</option>
       </select>
       <br/>
-      <select name="language">
-        <option value="none">- Choose a Language -</option>
-        <option value="arctic">Arctic</option>
-        <option value="coast">Coast</option>
-        <option value="desert">Desert</option>
-        <option value="forest">Forest</option>
-        <option value="mountain">Mountain</option>
-        <option value="swamp">Swamp</option>
-    </select>
     </div>
     `;
     getAcc();
   }
-  if (classes.value === "rogue") {
+  if (classes.value === "Rogue") {
     img.src = "./img/form_img/rogue.jpeg";
     features.innerHTML = `
     <h3>Class features</h3>
@@ -493,52 +484,52 @@ function myClass() {
       <p><span class="main-color">Tools:</span> Thieves’ tools</p>
       <p><span class="main-color">Saving Throws:</span> Dexterity, Intelligence</p>
       <p><span class="main-color">Skills:</span> Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth</p>
-      <select name="rouge-skill">
-        <option value="none">- Choose a Rouge Skill -</option>
-        <option value="acrobatics">Acrobatics</option>
-        <option value="athletics">Athletics</option>
-        <option value="deception">Deception</option>
-        <option value="insight">Insight</option>
-        <option value="investigation">Investigation</option>
-        <option value="perception">Perception</option>
-        <option value="persuasion">Persuasion</option>
-        <option value="stealth">Stealth</option>
+      <select name="rogue-skill-1">
+        <option value="none">- Choose a rogue Skill -</option>
+        <option value="Acrobatics">Acrobatics</option>
+        <option value="Athletics">Athletics</option>
+        <option value="Deception">Deception</option>
+        <option value="Insight">Insight</option>
+        <option value="Investigation">Investigation</option>
+        <option value="Perception">Perception</option>
+        <option value="Persuasion">Persuasion</option>
+        <option value="Stealth">Stealth</option>
       </select>
       <br>
-      <select name="rouge-skill">
-        <option value="none">- Choose a Rouge Skill -</option>
-        <option value="acrobatics">Acrobatics</option>
-        <option value="athletics">Athletics</option>
-        <option value="deception">Deception</option>
-        <option value="insight">Insight</option>
-        <option value="investigation">Investigation</option>
-        <option value="perception">Perception</option>
-        <option value="persuasion">Persuasion</option>
-        <option value="stealth">Stealth</option>
+      <select name="rogue-skill-2">
+        <option value="none">- Choose a rogue Skill -</option>
+        <option value="Acrobatics">Acrobatics</option>
+        <option value="Athletics">Athletics</option>
+        <option value="Deception">Deception</option>
+        <option value="Insight">Insight</option>
+        <option value="Investigation">Investigation</option>
+        <option value="Perception">Perception</option>
+        <option value="Persuasion">Persuasion</option>
+        <option value="Stealth">Stealth</option>
       </select>
       <br>
-      <select name="rouge-skill">
-        <option value="none">- Choose a Rouge Skill -</option>
-        <option value="acrobatics">Acrobatics</option>
-        <option value="athletics">Athletics</option>
-        <option value="deception">Deception</option>
-        <option value="insight">Insight</option>
-        <option value="investigation">Investigation</option>
-        <option value="perception">Perception</option>
-        <option value="persuasion">Persuasion</option>
-        <option value="stealth">Stealth</option>
+      <select name="rogue-skill-3">
+        <option value="none">- Choose a rogue Skill -</option>
+        <option value="Acrobatics">Acrobatics</option>
+        <option value="Athletics">Athletics</option>
+        <option value="Deception">Deception</option>
+        <option value="Insight">Insight</option>
+        <option value="Investigation">Investigation</option>
+        <option value="Perception">Perception</option>
+        <option value="Persuasion">Persuasion</option>
+        <option value="Stealth">Stealth</option>
       </select>
       <br>
-      <select name="rouge-skill">
-        <option value="none">- Choose a Rouge Skill -</option>
-        <option value="acrobatics">Acrobatics</option>
-        <option value="athletics">Athletics</option>
-        <option value="deception">Deception</option>
-        <option value="insight">Insight</option>
-        <option value="investigation">Investigation</option>
-        <option value="perception">Perception</option>
-        <option value="persuasion">Persuasion</option>
-        <option value="stealth">Stealth</option>
+      <select name="rogue-skill-4">
+        <option value="none">- Choose a rogue Skill -</option>
+        <option value="Acrobatics">Acrobatics</option>
+        <option value="Athletics">Athletics</option>
+        <option value="Deception">Deception</option>
+        <option value="Insight">Insight</option>
+        <option value="Investigation">Investigation</option>
+        <option value="Perception">Perception</option>
+        <option value="Persuasion">Persuasion</option>
+        <option value="Stealth">Stealth</option>
       </select>
       <br>
     </div>
@@ -552,17 +543,20 @@ function myClass() {
       <p>
       At 6th level, you can choose two more of your proficiencies (in skills or with thieves’ tools) to gain this benefit.
       </p>
-      <select name="expertise">
+      <select name="expertise-1">
         <option value="none">- Choose Rouge Expertise -</option>
-        <option value="thievesTools">Thieves' Tools</option>
-        <option value="thievesTools">Thieves' Tools</option>
+        <option value="Deception">Deception</option>
+        <option value="Stealth">Stealth</option>
+        <option value="Thieves' Tools">Thieves' Tools</option>
       </select>
       <br/>
-      <select name="expertise">
+      <select name="expertise-2">
         <option value="none">- Choose Rouge Expertise -</option>
-        <option value="thievesTools">Thieves' Tools</option>
-        <option value="thievesTools">Thieves' Tools</option>
+        <option value="Deception">Deception</option>
+        <option value="Stealth">Stealth</option>
+        <option value="Thieves' Tools">Thieves' Tools</option>
       </select>
+      <br/>
     </div>
     <button class="accordion">Sneak Attack</button>
     <div class="acc-body">
@@ -586,7 +580,7 @@ function myClass() {
     `;
     getAcc();
   }
-  if (classes.value === "sorcerer") {
+  if (classes.value === "Sorcerer") {
     img.src = "./img/form_img/sorcerer.jpeg";
     features.innerHTML = `
     <h3>Class features</h3>
@@ -612,24 +606,24 @@ function myClass() {
       <p><span class="main-color">Tools:</span> None</p>
       <p><span class="main-color">Saving Throws:</span> Constitution, Charisma</p>
       <p><span class="main-color">Skills:</span> Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion</p>
-      <select name="sorcerer-skill">
+      <select name="sorcerer-skill-1">
         <option value="none">- Choose a Sorcerer Skill -</option>
-        <option value="arcana">Arcana</option>
-        <option value="deception">Deception</option>
-        <option value="insight">Insight</option>
-        <option value="intimidation">Intimidation</option>
-        <option value="persuasion">Persuasion</option>
-        <option value="religion">Religion</option>
+        <option value="Arcana">Arcana</option>
+        <option value="Deception">Deception</option>
+        <option value="Insight">Insight</option>
+        <option value="Intimidation">Intimidation</option>
+        <option value="Persuasion">Persuasion</option>
+        <option value="Religion">Religion</option>
       </select>
       <br>
-      <select name="sorcerer-skill">
+      <select name="sorcerer-skill-2">
         <option value="none">- Choose a Sorcerer Skill -</option>
-        <option value="arcana">Arcana</option>
-        <option value="deception">Deception</option>
-        <option value="insight">Insight</option>
-        <option value="intimidation">Intimidation</option>
-        <option value="persuasion">Persuasion</option>
-        <option value="religion">Religion</option>
+        <option value="Arcana">Arcana</option>
+        <option value="Deception">Deception</option>
+        <option value="Insight">Insight</option>
+        <option value="Intimidation">Intimidation</option>
+        <option value="Persuasion">Persuasion</option>
+        <option value="Religion">Religion</option>
       </select>
     </div>
     <button class="accordion">Spellcasting</button>
@@ -659,7 +653,7 @@ function myDescription() {
   if (background.value === "none") {
     description.innerHTML = "";
   }
-  if (background.value === "acolyte") {
+  if (background.value === "Acolyte") {
     description.innerHTML = `
     <hr>
     <p>
@@ -671,24 +665,24 @@ function myDescription() {
     <p><span class="main-color">Skill Proficiencies:</span> Insight, Religion</p>
     <span class="main-color">Languages:</span>
     <br>
-    <select name="ad-language">
+    <select name="ad-language-1">
       <option value="none">- Choose a Language -</option>
-      <option value="none">Abyssal</option>
-      <option value="none">Draconic</option>
-      <option value="none">Elvish</option>
-      <option value="none">Goblin</option>
-      <option value="none">Halfling</option>
-      <option value="none">Orc</option>
+      <option value="Abyssal">Abyssal</option>
+      <option value="Draconic">Draconic</option>
+      <option value="Elvish">Elvish</option>
+      <option value="Goblin">Goblin</option>
+      <option value="Halfling">Halfling</option>
+      <option value="Orc">Orc</option>
     </select>
     <br>
-    <select name="ad-language">
+    <select name="ad-language-2">
       <option value="none">- Choose a Language -</option>
-      <option value="abyssal">Abyssal</option>
-      <option value="draconic">Draconic</option>
-      <option value="elvish">Elvish</option>
-      <option value="goblin">Goblin</option>
-      <option value="hafling">Halfling</option>
-      <option value="orc">Orc</option>
+      <option value="Abyssal">Abyssal</option>
+      <option value="Draconic">Draconic</option>
+      <option value="Elvish">Elvish</option>
+      <option value="Goblin">Goblin</option>
+      <option value="Halfling">Halfling</option>
+      <option value="Orc">Orc</option>
     </select>
     <button class="accordion back-feature">Shelter of the Faithful</button>
     <div class="acc-body">
@@ -711,7 +705,7 @@ function myDescription() {
     `;
     getAcc();
   }
-  if (background.value === "spy") {
+  if (background.value === "Criminal/Spy") {
     description.innerHTML = `
     <hr>
     <p>
@@ -724,10 +718,10 @@ function myDescription() {
     <p><span class="main-color">Tool Proficiencies:</span> Thieves' Tools</p>
     <select name="game-set">
       <option value="none">- Choose a Gaming Set -</option>
-      <option value="dice">Dice Set</option>
-      <option value="dragon">Dragonchess Set</option>
-      <option value="card">Playing Card Set</option>
-      <option value="three-dragon">Three-Dragon Ante Set</option>
+      <option value="Dice Set">Dice Set</option>
+      <option value="Dragonchess Set">Dragonchess Set</option>
+      <option value="Playing Card Set">Playing Card Set</option>
+      <option value="Three-Dragon Ante Set">Three-Dragon Ante Set</option>
     </select>
     <button class="accordion back-feature">Criminal Contact</button>
     <div class="acc-body">
@@ -740,7 +734,7 @@ function myDescription() {
     `;
     getAcc();
   }
-  if (background.value === "folkHero") {
+  if (background.value === "Folk Hero") {
     description.innerHTML = `
     <hr>
     <p>
@@ -752,12 +746,12 @@ function myDescription() {
     <p><span class="main-color">Tool Proficiencies:</span> Vehicles (Land)</p>
     <select name="artisanTool">
       <option value="none">- Choose a Artisan's Tool -</option>
-      <option value="alch">Alchemist's Supplies</option>
-      <option value="brew">Brewer's Supplies</option>
-      <option value="carp">Carpenter's Tools</option>
-      <option value="jeweler">Jeweler's Tools</option>
-      <option value="mason">Mason's Tools</option>
-      <option value="smith">Smith's Tools</option>
+      <option value="Alchemist's Supplies">Alchemist's Supplies</option>
+      <option value="Brewer's Supplies">Brewer's Supplies</option>
+      <option value="Carpenter's Tools">Carpenter's Tools</option>
+      <option value="Jeweler's Tools">Jeweler's Tools</option>
+      <option value="Mason's Tools">Mason's Tools</option>
+      <option value="Smith's Tools">Smith's Tools</option>
     </select>
     <button class="accordion back-feature">Rustic Hospitality</button>
     <div class="acc-body">
@@ -771,7 +765,7 @@ function myDescription() {
     `;
     getAcc();
   }
-  if (background.value === "hauntedOne") {
+  if (background.value === "Haunted One") {
     description.innerHTML = `
     <hr>
     <p>
@@ -785,32 +779,32 @@ function myDescription() {
     </p>
     <p><span class="main-color">Skill Proficiencies:</span></p>
     <br/>
-    <select name="skill">
+    <select name="skill-1">
       <option value="none">- Choose a Skill -</option>
-      <option value="arcana">Arcana</option>
-      <option value="investigation">Investigation</option>
-      <option value="religion">Religion</option>
-      <option value="survival">Survival</option>
+      <option value="Arcana">Arcana</option>
+      <option value="Investigation">Investigation</option>
+      <option value="Religion">Religion</option>
+      <option value="Survival">Survival</option>
     </select>
     <br/>
-    <select name="skill">
+    <select name="skill-2">
       <option value="none">- Choose a Skill -</option>
-      <option value="arcana">Arcana</option>
-      <option value="investigation">Investigation</option>
-      <option value="religion">Religion</option>
-      <option value="survival">Survival</option>
+      <option value="Arcana">Arcana</option>
+      <option value="Investigation">Investigation</option>
+      <option value="Religion">Religion</option>
+      <option value="Survival">Survival</option>
     </select>
     <br>
     <span class="main-color">Languages:</span>
     <br>
     <select name="ad-language">
       <option value="none">- Choose an Extra Language -</option>
-      <option value="abyssal">Abyssal</option>
-      <option value="draconic">Draconic</option>
-      <option value="elvish">Elvish</option>
-      <option value="goblin">Goblin</option>
-      <option value="hafling">Halfling</option>
-      <option value="orc">Orc</option>
+      <option value="Abyssal">Abyssal</option>
+      <option value="Draconic">Draconic</option>
+      <option value="Elvish">Elvish</option>
+      <option value="Goblin">Goblin</option>
+      <option value="Hafling">Halfling</option>
+      <option value="Orc">Orc</option>
     </select>
     <button class="accordion back-feature">Heart of Darkness</button>
     <div class="acc-body">
@@ -824,7 +818,7 @@ function myDescription() {
     `;
     getAcc();
   }
-  if (background.value === "sage") {
+  if (background.value === "Sage") {
     description.innerHTML = `
     <hr>
     <p>
@@ -835,24 +829,24 @@ function myDescription() {
     <br>
     <span class="main-color">Languages:</span>
     <br>
-    <select name="ad-language">
+    <select name="ad-language-1">
       <option value="none">- Choose an Extra Language -</option>
-      <option value="abyssal">Abyssal</option>
-      <option value="draconic">Draconic</option>
-      <option value="elvish">Elvish</option>
-      <option value="goblin">Goblin</option>
-      <option value="hafling">Halfling</option>
-      <option value="orc">Orc</option>
+      <option value="Abyssal">Abyssal</option>
+      <option value="Draconic">Draconic</option>
+      <option value="Elvish">Elvish</option>
+      <option value="Goblin">Goblin</option>
+      <option value="Hafling">Halfling</option>
+      <option value="Orc">Orc</option>
     </select>
     <br>
-    <select name="ad-language">
+    <select name="ad-language-2">
       <option value="none">- Choose an Extra Language -</option>
-      <option value="abyssal">Abyssal</option>
-      <option value="draconic">Draconic</option>
-      <option value="elvish">Elvish</option>
-      <option value="goblin">Goblin</option>
-      <option value="hafling">Halfling</option>
-      <option value="orc">Orc</option>
+      <option value="Abyssal">Abyssal</option>
+      <option value="Draconic">Draconic</option>
+      <option value="Elvish">Elvish</option>
+      <option value="Goblin">Goblin</option>
+      <option value="Hafling">Halfling</option>
+      <option value="Orc">Orc</option>
     </select>
     <button class="accordion back-feature">Researcher</button>
     <div class="acc-body">
@@ -867,7 +861,7 @@ function myDescription() {
     `;
     getAcc();
   }
-  if (background.value === "soldier") {
+  if (background.value === "Soldier") {
     description.innerHTML = `
     <hr>
     <p>
@@ -887,10 +881,10 @@ function myDescription() {
     <br>
     <select name="game-set">
       <option value="none">- Choose a Gaming Set -</option>
-      <option value="dice">Dice Set</option>
-      <option value="dragon">Dragonchess Set</option>
-      <option value="card">Playing Card Set</option>
-      <option value="three-dragon">Three-Dragon Ante Set</option>
+      <option value="Dice Set">Dice Set</option>
+      <option value="Dragonchess Set">Dragonchess Set</option>
+      <option value="Playing Card Set">Playing Card Set</option>
+      <option value="Three-Dragon Ante Set">Three-Dragon Ante Set</option>
     </select>
     <button class="accordion back-feature">Military Rank</button>
     <div class="acc-body">
