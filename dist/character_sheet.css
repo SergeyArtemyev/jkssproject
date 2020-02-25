@@ -57,6 +57,29 @@ td {
 .skills {
   padding: 1rem;
 }
+.circle {
+  display: inline-block;
+  border: 1px solid #ccc;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.prof-y {
+  border-color: #000;
+  position: relative;
+}
+.prof-y::before{
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* Other features */
 .other-features {
   padding-left: 0.5rem;
