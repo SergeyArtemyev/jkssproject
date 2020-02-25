@@ -19,6 +19,8 @@ const rogueSkill3 = words.get("rogue-skill-3");
 const rogueSkill4 = words.get("rogue-skill-4");
 const sorcereSkill1 = words.get("sorcerer-skill-1");
 const sorcereSkill2 = words.get("sorcerer-skill-2");
+const skillprof1 = words.get("skill-1");
+const skillprof2 = words.get("skill-2");
 const fighterStyle = words.get("fighter-style");
 const favoredEnemy = words.get("favored-enemy");
 const naturalExplorer = words.get("natural-explorer");
@@ -245,8 +247,8 @@ function featuresDiv() {
     <p>Hit Points at 1st Level: 10 + your Constitution modifier</p>
     <p>Proficiency</p>
     <ul>
-      <li>${fighterSkill1}</li>
-      <li>${fighterSkill2}</li>
+      <li class="profskills">${fighterSkill1}</li>
+      <li class="profskills">${fighterSkill2}</li>
     </ul>
     <p>Fighting style</p>
     <p>
@@ -271,9 +273,9 @@ function featuresDiv() {
     <p>Hit Points at 1st Level: 8 + your Constitution modifier</p>
     <p>Proficiency</p>
     <ul>
-      <li>${rangerSkill1}</li>
-      <li>${rangerSkill2}</li>
-      <li>${rangerSkill3}</li>
+      <li class="profskills">${rangerSkill1}</li>
+      <li class="profskills">${rangerSkill2}</li>
+      <li class="profskills">${rangerSkill3}</li>
     </ul>
     <p>Favored Enemy</p>
     <p>
@@ -302,10 +304,10 @@ function featuresDiv() {
     <p>Hit Points at 1st Level: 8 + your Constitution modifier</p>
     <p>Proficiency</p>
     <ul>
-      <li>${rogueSkill1}</li>
-      <li>${rogueSkill2}</li>
-      <li>${rogueSkill3}</li>
-      <li>${rogueSkill4}</li>
+      <li class="profskills">${rogueSkill1}</li>
+      <li class="profskills">${rogueSkill2}</li>
+      <li class="profskills">${rogueSkill3}</li>
+      <li class="profskills">${rogueSkill4}</li>
     </ul>
     <p>Expertise</p>
     <p>
@@ -338,8 +340,8 @@ function featuresDiv() {
     <p>Hit Points at 1st Level: 6 + your Constitution modifier</p>
     <p>Proficiency</p>
     <ul>
-      <li>${sorcereSkill1}</li>
-      <li>${sorcereSkill2}</li>
+      <li class="profskills">${sorcereSkill1}</li>
+      <li class="profskills">${sorcereSkill2}</li>
     </ul>
     <p>Spellcasting</p>
     <p>
@@ -466,6 +468,7 @@ racialTraitsDiv.innerHTML = racialTraits();
 
 function backgroundDesc() {
   let backgroundDescVar;
+  let proficiencyVar;
   if (background === "Acolyte") {
     backgroundDescVar =
       `
@@ -473,6 +476,11 @@ function backgroundDesc() {
     You act as an intermediary between the realm of the holy and the mortal world, 
     performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. 
     You are not necessarily a cleric—performing sacred rites is not the same thing as channeling divine power.
+    `;
+    proficiencyVar =
+      `
+    <li class="profskills">Insight</li>
+    <li class="profskills">Religion</li>
     `;
   }
   if (background === "Criminal/Spy") {
@@ -484,6 +492,11 @@ function backgroundDesc() {
     and violence that pervades the underbelly of civilization, 
     and you have survived up to this point by flouting the rules and regulations of society.
     `;
+    proficiencyVar =
+      `
+    <li class="profskills">Deception</li>
+    <li class="profskills">Stealth</li>
+    `;
   }
   if (background === "Folk Hero") {
     backgroundDescVar =
@@ -491,6 +504,11 @@ function backgroundDesc() {
     You come from a humble social rank, but you are destined for so much more. 
     Already the people of your home village regard you as their champion, 
     and your destiny calls you to stand against the tyrants and monsters that threaten the common folk everywhere.
+    `;
+    proficiencyVar =
+      `
+    <li class="profskills">Animal Handling</li>
+    <li class="profskills">Survival</li>
     `;
   }
   if (background === "Haunted One") {
@@ -504,6 +522,11 @@ function backgroundDesc() {
     isolating you from most people and making you question your sanity. 
     You must find a way to overcome it before it destroys you.
     `;
+    proficiencyVar =
+      `
+    <li class="profskills">${skillprof1}</li>
+    <li class="profskills">${skillprof2}</li>
+    `;
   }
   if (background === "Sage") {
     backgroundDescVar =
@@ -511,6 +534,11 @@ function backgroundDesc() {
     You spent years learning the lore of the multiverse. You scoured manuscripts, 
     studied scrolls, and listened to the greatest experts on the subjects that interest you. 
     Your efforts have made you a master in your fields of study.
+    `;
+    proficiencyVar =
+      `
+    <li class="profskills">Arcana</li>
+    <li class="profskills">History</li>
     `;
   }
   if (background === "Soldier") {
@@ -522,15 +550,22 @@ function backgroundDesc() {
     You might have been part of a standing national army or a mercenary company, 
     or perhaps a member of a local militia who rose to prominence during a recent war.
     `;
+    proficiencyVar =
+      `
+    <li class="profskills">Athletics</li>
+    <li class="profskills">Intimidation</li>
+    `;
   }
-  return backgroundDescVar;
+  return { backgroundDescVar, proficiencyVar };
 }
 
 const description =
   `
 <h3>Background</h3>
 <p>${background}</p>
-<p id="background-desc">${backgroundDesc()}</p>
+<p id="background-desc">${backgroundDesc().backgroundDescVar}</p>
+<p>Proficiency</p>
+<ul>${backgroundDesc().proficiencyVar}</ul>
 <p>Characteristics</p>
 <table>
   <tr>
@@ -596,4 +631,69 @@ const equipmentVar =
 // Get equipment div 
 const equipmentDiv = document.getElementById("equipment");
 // Populate the equipment div
-equipmentDiv.innerHTML = equipmentVar; 
+equipmentDiv.innerHTML = equipmentVar;
+
+// Create the proficiencies div
+const profVar =
+  `
+<p><span class="main-color">Proficient in Armor:</span>Light armor</p>
+<p><span class="main-color">Proficient in Weapon:</span>Light armor</p>
+<p><span class="main-color">Proficient in Vehicles:</span>Light armor</p>
+<p><span class="main-color">Proficient in Tools:</span>Light armor</p>
+`;
+
+// Get the prof div
+const profDiv = document.getElementById("proficiencies");
+// Populate the prof div with prof var
+profDiv.innerHTML = profVar;
+
+
+// Create the skills div variable
+const skillsVar =
+  `
+<p><span class="circle"></span><span class="dex">${dexMod}</span> <span class="skill">Acrobatics</span> <span class="ab-skill">(Dex)</span>
+</p>
+<p><span class="circle"></span><span class="wis">${wisMod}</span> <span class="skill">Animal Handling</span> <span
+    class="ab-skill">(Wis)</span></p>
+<p><span class="circle"></span><span class="int">${intMod}</span> <span class="skill">Arcana</span> <span class="ab-skill">(Int)</span></p>
+<p><span class="circle"></span><span class="str">${strMod}</span> <span class="skill">Athletics</span> <span class="ab-skill">(Str)</span></p>
+<p><span class="circle"></span><span class="cha">${charMod}</span> <span class="skill">Deception</span> <span class="ab-skill">(Cha)</span></p>
+<p><span class="circle"></span><span class="int">${intMod}</span> <span class="skill">History</span> <span class="ab-skill">(Int)</span></p>
+<p><span class="circle"></span><span class="wis">${wisMod}</span> <span class="skill">Insight</span> <span class="ab-skill">(Wis)</span></p>
+<p><span class="circle"></span><span class="cha">${charMod}</span> <span class="skill">Intimidation</span> <span class="ab-skill">(Cha)</span>
+</p>
+<p><span class="circle"></span><span class="int">${intMod}</span> <span class="skill">Investigation</span> <span class="ab-skill">(Int)</span>
+</p>
+<p><span class="circle"></span><span class="wis">${wisMod}</span> <span class="skill">Medicine</span> <span class="ab-skill">(Wis)</span></p>
+<p><span class="circle"></span><span class="int">${intMod}</span> <span class="skill">Nature</span> <span class="ab-skill">(Int)</span></p>
+<p><span class="circle"></span><span class="wis">${wisMod}</span> <span class="skill">Perception</span> <span class="ab-skill">(Wis)</span>
+</p>
+<p><span class="circle"></span><span class="cha">${charMod}</span> <span class="skill">Perfomance</span> <span class="ab-skill">(Cha)</span>
+</p>
+<p><span class="circle"></span><span class="cha">${charMod}</span> <span class="skill">Persuasion</span> <span class="ab-skill">(Cha)</span>
+</p>
+<p><span class="circle"></span><span class="int">${intMod}</span> <span class="skill">Religion</span> <span class="ab-skill">(Int)</span></p>
+<p><span class="circle"></span><span class="dex">${dexMod}</span> <span class="skill">Sleight of Hand</span> <span
+    class="ab-skill">(Dex)</span></p>
+<p><span class="circle"></span><span class="dex">${dexMod}</span> <span class="skill">Stealth</span> <span class="ab-skill">(Dex)</span></p>
+<p><span class="circle"></span><span class="wis">${wisMod}</span> <span class="skill">Survival</span> <span class="ab-skill">(Wis)</span></p>
+
+`;
+
+// Get the skill div
+const skillsDiv = document.getElementById("skills");
+// Populate the skill div with skill variable
+skillsDiv.innerHTML = skillsVar;
+
+// Add Proficiency to skill list
+const prof = document.getElementsByClassName("profskills");
+const skill = document.getElementsByClassName("skill");
+let profBonus;
+for (let i = 0; i < skill.length; i++) {
+  for (let j = 0; j < prof.length; j++) {
+    if (skill[i].innerHTML === prof[j].innerHTML) {
+      skill[i].previousElementSibling.innerHTML = parseInt(skill[i].previousElementSibling.innerHTML) + 2;
+      skill[i].previousElementSibling.previousElementSibling.classList.add("prof-y");
+    }
+  }
+}

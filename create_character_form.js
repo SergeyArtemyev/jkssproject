@@ -490,9 +490,12 @@ function myClass() {
         <option value="Athletics">Athletics</option>
         <option value="Deception">Deception</option>
         <option value="Insight">Insight</option>
+        <option value="Intimidation">Intimidation</option>
         <option value="Investigation">Investigation</option>
         <option value="Perception">Perception</option>
+        <option value="Performance">Performance</option>
         <option value="Persuasion">Persuasion</option>
+        <option value="Slight Of Hand">Slight Of Hand</option>
         <option value="Stealth">Stealth</option>
       </select>
       <br>
@@ -502,9 +505,12 @@ function myClass() {
         <option value="Athletics">Athletics</option>
         <option value="Deception">Deception</option>
         <option value="Insight">Insight</option>
+        <option value="Intimidation">Intimidation</option>
         <option value="Investigation">Investigation</option>
         <option value="Perception">Perception</option>
+        <option value="Performance">Performance</option>
         <option value="Persuasion">Persuasion</option>
+        <option value="Slight Of Hand">Slight Of Hand</option>
         <option value="Stealth">Stealth</option>
       </select>
       <br>
@@ -514,9 +520,12 @@ function myClass() {
         <option value="Athletics">Athletics</option>
         <option value="Deception">Deception</option>
         <option value="Insight">Insight</option>
+        <option value="Intimidation">Intimidation</option>
         <option value="Investigation">Investigation</option>
         <option value="Perception">Perception</option>
+        <option value="Performance">Performance</option>
         <option value="Persuasion">Persuasion</option>
+        <option value="Slight Of Hand">Slight Of Hand</option>
         <option value="Stealth">Stealth</option>
       </select>
       <br>
@@ -526,9 +535,12 @@ function myClass() {
         <option value="Athletics">Athletics</option>
         <option value="Deception">Deception</option>
         <option value="Insight">Insight</option>
+        <option value="Intimidation">Intimidation</option>
         <option value="Investigation">Investigation</option>
         <option value="Perception">Perception</option>
+        <option value="Performance">Performance</option>
         <option value="Persuasion">Persuasion</option>
+        <option value="Slight Of Hand">Slight Of Hand</option>
         <option value="Stealth">Stealth</option>
       </select>
       <br>
@@ -743,7 +755,7 @@ function myDescription() {
     and your destiny calls you to stand against the tyrants and monsters that threaten the common folk everywhere.
     </p>
     <p><span class="main-color">Skill Proficiencies:</span> Animal Handling, Survival</p>
-    <p><span class="main-color">Tool Proficiencies:</span> Vehicles (Land)</p>
+    <p><span class="main-color">Vehicle Proficiencies:</span> Vehicles (Land)</p>
     <select name="artisanTool">
       <option value="none">- Choose a Artisan's Tool -</option>
       <option value="Alchemist's Supplies">Alchemist's Supplies</option>
