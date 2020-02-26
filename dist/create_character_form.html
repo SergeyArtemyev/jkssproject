@@ -449,6 +449,7 @@
                 <!-- Trigger the modal -->
                 <div id="modal-img-open" class="avatar">
                   <img class="main-avatar" src="./img/avatar.png" alt="avatar">
+                  <input id="hidden-input" name="img" type="text" style="visibility: hidden;">
                   <i class="fa fa-plus fa-2x img-icon"></i>
                 </div>
                 <!-- The Modal -->
@@ -727,35 +728,27 @@
 
         let plusIcon = document.getElementsByClassName("img-icon")[0];
         let mainAvatar = document.getElementsByClassName("main-avatar")[0];
+        let hidInput = document.getElementById("hidden-input");
         plusIcon.style.display = "none";
         mainAvatar.style.filter = "unset";
         mainAvatar.src = avatarImgs[i].src;
+        hidInput.value = avatarImgs[i].src;
         modal.style.display = "none";
         // test
 
 
-        function getPost() {
 
-          http.get('http://localhost:3000/src')
-            .then(data => {
-
-            })
-            .catch(err => console.log(err))
-        }
         let imgsrc = mainAvatar.src;
         const data = {
           imgsrc
         }
 
         http.post('http://localhost:3000/src', data)
-          .then(data => {
-            getPost()
-          })
+          .then()
           .catch(err => console.log(err))
 
       });
     }
-
 
   </script>
 </body>

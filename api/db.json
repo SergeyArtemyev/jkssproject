@@ -3,6 +3,22 @@
     {
       "id": 1,
       "imgsrc": "something"
+    },
+    {
+      "imgsrc": "http://127.0.0.1:5500/dist/img/avatar_images/human/human1.png",
+      "id": 2
+    },
+    {
+      "imgsrc": "http://127.0.0.1:5500/dist/img/avatar_images/human/human1.png",
+      "id": 3
+    },
+    {
+      "imgsrc": "http://127.0.0.1:5500/dist/img/avatar_images/human/human2.jpeg",
+      "id": 4
+    },
+    {
+      "imgsrc": "http://127.0.0.1:5500/dist/img/avatar_images/human/human2.jpeg",
+      "id": 4
     }
   ]
 }
