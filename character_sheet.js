@@ -54,6 +54,7 @@ const conMod = words.get('con-mod');
 const intMod = words.get('int-mod');
 const wisMod = words.get('wis-mod');
 const charMod = words.get('char-mod');
+const img = words.get("img");
 
 // the string that will populate the character sheet page
 const headingPart = `
@@ -738,3 +739,5 @@ for (let i = 0; i < skill.length; i++) {
     }
   }
 }
+
+document.getElementsByClassName("char-avatar")[0].src = img;
