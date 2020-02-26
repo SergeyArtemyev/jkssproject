@@ -36,9 +36,12 @@ label,
 .main-color {
   color: #9d0a0e;
 }
-/* padding */
+/* padding/margin */
 .p-1-side {
   padding: 0 1rem;
+}
+.mb-1 {
+  margin-bottom: 1rem;
 }
 img {
   width: 100%;
