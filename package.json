@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "json:server": "json-server --watch api/db.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "homepage": "https://SergeyArtemyev.github.io/jkssproject",
   "dependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^2.2.0",
+    "json-server": "^0.16.1"
   }
 }

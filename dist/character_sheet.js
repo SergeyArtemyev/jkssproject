@@ -58,7 +58,7 @@ const charMod = words.get('char-mod');
 // the string that will populate the character sheet page
 const headingPart = `
 <div class="avatar justify-center align-items-center row col-40">
-  <img src="./img/avatar.png" alt="" />
+  <img class="char-avatar" src="./img/avatar.png" alt="" />
   <span class="name">${charName}</span>
 </div>
 <div class="info col-60">
@@ -633,19 +633,60 @@ const equipmentDiv = document.getElementById("equipment");
 // Populate the equipment div
 equipmentDiv.innerHTML = equipmentVar;
 
-// Create the proficiencies div
-const profVar =
-  `
-<p><span class="main-color">Proficient in Armor:</span>Light armor</p>
-<p><span class="main-color">Proficient in Weapon:</span>Light armor</p>
-<p><span class="main-color">Proficient in Vehicles:</span>Light armor</p>
-<p><span class="main-color">Proficient in Tools:</span>Light armor</p>
-`;
+// Create the proficiencies div (i could create the common function for vars related to classes, but i'm fine for now )
+function profVarFunc() {
+  let profVar;
+  let toolProf1;
+  let toolProf2;
+  let vehiclesProf;
+
+  toolProf === null ? toolProf1 = "" : toolProf1 = toolProf;
+  background === "Criminal/Spy" ? toolProf2 = "Thieves' Tools" : toolProf2 = "";
+  background === "Folk Hero" || "Soldier" ? vehiclesProf = "Vehicles (Land)" : vehiclesProf = "";
+
+  if (classes === 'Fighter') {
+    profVar =
+      `
+    <p><span class="main-color">Proficient in Armor:</span> All armor, shields</p>
+    <p><span class="main-color">Proficient in Weapon:</span> Simple weapons, martial weapons</p>
+    <p><span class="main-color">Proficient in Vehicles:</span> ${vehiclesProf}</p>
+    <p><span class="main-color">Proficient in Tools:</span> ${toolProf1}${toolProf2}</p>
+    `;
+  }
+  if (classes === 'Ranger') {
+    profVar =
+      `
+    <p><span class="main-color">Proficient in Armor:</span> Light armor, medium armor, shields</p>
+    <p><span class="main-color">Proficient in Weapon:</span> Simple weapons, martial weapons</p>
+    <p><span class="main-color">Proficient in Vehicles:</span></p>
+    <p><span class="main-color">Proficient in Tools:</span></p>
+    `;
+  }
+  if (classes === 'Rogue') {
+    profVar =
+      `
+    <p><span class="main-color">Proficient in Armor:</span> Light armor</p>
+    <p><span class="main-color">Proficient in Weapon:</span> Simple weapons, hand crossbows, longswords, rapiers, shortswords</p>
+    <p><span class="main-color">Proficient in Vehicles:</span></p>
+    <p><span class="main-color">Proficient in Tools:</span> Thieves’ tools</p>
+    `;
+  }
+  if (classes === 'Sorcerer') {
+    profVar =
+      `
+    <p><span class="main-color">Proficient in Armor:</span> None</p>
+    <p><span class="main-color">Proficient in Weapon:</span> Daggers, darts, slings, quarterstaffs, light crossbows</p>
+    <p><span class="main-color">Proficient in Vehicles:</span></p>
+    <p><span class="main-color">Proficient in Tools:</span></p>
+    `;
+  }
+  return profVar;
+}
 
 // Get the prof div
 const profDiv = document.getElementById("proficiencies");
 // Populate the prof div with prof var
-profDiv.innerHTML = profVar;
+profDiv.innerHTML = profVarFunc();
 
 
 // Create the skills div variable

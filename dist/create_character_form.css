@@ -191,6 +191,19 @@ input[type="number"]::-webkit-outer-spin-button {
 .avatar {
   width: 70px;
   height: 70px;
+  cursor: pointer;
+  position: relative;
+}
+.avatar img {
+  filter: blur(2px);
+}
+.img-icon {
+  filter: unset;
+  color: #50df55;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .name-group {
   padding: 0 0.5rem;
@@ -209,6 +222,44 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 30%;
   padding: 0.8rem 1rem;
   margin-bottom: 0.5rem;
+}
+/* Modal CSS */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  background: #e0d1be;
+  margin: 100px auto;
+  width: 40%;
+  border: 1px solid #ccc;
+  position: relative;
+}
+.modal-body {
+  margin: 0 0.5rem;
+  padding-bottom: 1rem;
+}
+.modal-body img {
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inline-block;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
 }
 
 /* Starting Equipment */

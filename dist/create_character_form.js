@@ -889,7 +889,7 @@ function myDescription() {
     or a mercenary company.
     </p>
     <p><span class="main-color">Skill Proficiencies:</span> Athletics, Intimidation</p>
-    <p><span class="main-color">Tool Proficiencies:</span> Vehicles (Land)</p>
+    <p><span class="main-color">Vehicles Proficiencies:</span> Vehicles (Land)</p>
     <br>
     <select name="game-set">
       <option value="none">- Choose a Gaming Set -</option>
@@ -1183,3 +1183,40 @@ function chooseEq() {
     }
   }
 }
+
+// IMAGE MODAL FUNCTIONALITY
+// Get the modal
+let modal = document.getElementById("img-modal");
+// Get the div that opens the modal
+let openModal = document.getElementById("modal-img-open");
+// Get the span element that closes the modal
+let closeModal = document.getElementsByClassName("close")[0];
+// When the user clicks on the avatar open the modal
+openModal.onclick = function () {
+  modal.style.display = "block";
+}
+// When the user clicks the X buttom close the modal
+closeModal.onclick = function () {
+  modal.style.display = "none";
+}
+
+// Choose the picture and set it as an avatar
+// Get the imgs
+let avatarImgs = document.getElementsByClassName("avatar-img");
+// add eventlistener to the imgs and chenge the main avatar img and get rid of other stuff
+// Create a function that will change src of the chosen img
+
+// for (let i = 0; i < avatarImgs.length; i++) {
+//   avatarImgs[i].addEventListener("click", function chooseImg() {
+//     let plusIcon = document.getElementsByClassName("img-icon")[0];
+//     let mainAvatar = document.getElementsByClassName("main-avatar")[0];
+//     plusIcon.style.display = "none";
+//     mainAvatar.style.filter = "unset";
+//     mainAvatar.src = avatarImgs[i].src;
+//     modal.style.display = "none";
+//     // test
+
+
+//   });
+
+// }
