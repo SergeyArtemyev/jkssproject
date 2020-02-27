@@ -59,7 +59,7 @@ function myRace() {
       document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
       minus[i].style.visibility = "hidden";
       plus[i].style.visibility = "visible";
-      plus[i].style.display = "inline-block";
+      // plus[i].style.display = "inline-block";
       input[i].value = "8";
       let ability = document.getElementsByClassName("ability");
       if (ability[i]) {
@@ -136,7 +136,7 @@ function myRace() {
       document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
       minus[i].style.visibility = "hidden";
       plus[i].style.visibility = "visible";
-      plus[i].style.display = "inline-block";
+      // plus[i].style.display = "inline-block";
       input[i].value = "8";
       raceBonus[i].innerHTML = "-";
       total[i].value = "8";
@@ -191,7 +191,7 @@ function myRace() {
       document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
       minus[i].style.visibility = "hidden";
       plus[i].style.visibility = "visible";
-      plus[i].style.display = "inline-block";
+      // plus[i].style.display = "inline-block";
       input[i].value = "8";
       raceBonus[i].innerHTML = "-";
       total[i].value = "8";
@@ -254,7 +254,7 @@ function myRace() {
       document.getElementsByClassName("remaining-points")[0].innerHTML = remainingPoints;
       minus[i].style.visibility = "hidden";
       plus[i].style.visibility = "visible";
-      plus[i].style.display = "inline-block";
+      // plus[i].style.display = "inline-block";
       input[i].value = "8";
       raceBonus[i].innerHTML = "-";
       total[i].value = "8";
@@ -1051,21 +1051,21 @@ function plusAbility(i) {
   document.getElementsByClassName("total")[i].value = totalPoints(i);
   document.getElementsByClassName("modifier")[i].value = modifier(i);
   if (input.value == 15) {
-    plus.style.display = "none";
+    plus.style.visibility = "hidden";
   }
   if (remainingPoints == 1) {
     getInput();
   }
   if (remainingPoints == 0) {
-    for (let j = 0; j < document.getElementsByClassName("plus").length; j++) {
-      document.getElementsByClassName("plus")[j].style.visibility = "hidden";
+    for (let j = 0; j < document.getElementsByClassName("fa-plus-square").length; j++) {
+      document.getElementsByClassName("fa-plus-square")[j].style.visibility = "hidden";
     }
   }
 }
 // Hide plus buttons
 function getInput() {
   let input = document.getElementsByClassName("ability-input");
-  let plus = document.getElementsByClassName("plus");
+  let plus = document.getElementsByClassName("fa-plus-square");
   for (let i = 0; i < input.length; i++) {
     if (input[i].value >= 13) {
       plus[i].style.visibility = "hidden";
@@ -1115,9 +1115,8 @@ function minusAbility(i) {
   let plus = document.getElementsByClassName("fa-plus-square")[i];
   let minus = document.getElementsByClassName("fa-minus-square")[i];
   checkfortotal = false;
-  plus.style.display = "inline-block";
+  plus.style.visibility = "visible";
   input.value--;
-
   if (input.value > 12) {
     remainingPoints += 2;
   } else {
@@ -1125,8 +1124,12 @@ function minusAbility(i) {
   }
 
   if (remainingPoints > 0) {
-    for (let j = 0; j < document.getElementsByClassName("plus").length; j++) {
-      document.getElementsByClassName("plus")[j].style.visibility = "visible";
+    for (let j = 0; j < document.getElementsByClassName("fa-plus-square").length; j++) {
+      if (document.getElementsByClassName("ability-input")[j].value == 15) {
+        document.getElementsByClassName("fa-plus-square")[j].style.visibility = "hidden";
+      } else {
+        document.getElementsByClassName("fa-plus-square")[j].style.visibility = "visible";
+      }
     }
     if (remainingPoints == 1) {
       getInput();

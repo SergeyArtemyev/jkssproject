@@ -1,0 +1,28 @@
+@media screen and (max-width: 1500px){
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .container {
+    width: 98%;
+  }
+  .info1, .info2, .info3  {
+    margin: 0 auto;
+  }
+  #biglogo .row {
+    display: block;
+  }
+  #biglogo .header-container,
+  #biglogo .start-container, 
+  #biglogo .start-header {
+    margin: 0 auto;
+    padding-top: 2rem;
+    text-align: center;
+  }
+  #biglogo .start-header {
+    padding-top: 0.6rem;
+    margin-bottom: 8rem;
+  }
+}
