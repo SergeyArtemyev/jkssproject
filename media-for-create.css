@@ -1,0 +1,16 @@
+@media screen and (max-width: 1200px){
+  .ab-score .row {
+    display: inline-block;
+    text-align: center;
+  }
+  .ab-table {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .phys-char:before {
+    right: 39%;
+  }
+  .char-det:before {
+    right: 44%;
+  }
+}

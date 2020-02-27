@@ -60,7 +60,7 @@ img {
   justify-content: center;
 }
 .container {
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
 }
 /* Navbar */
@@ -352,3 +352,4 @@ p.start-header {
 .btn-sub:hover {
   text-shadow: 0 0 30px black;
 }
+
