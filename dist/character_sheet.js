@@ -87,42 +87,44 @@ const headingPart = `
   </table>
 </div>
 `;
-
 // Grab the heading part
 const headingPartVar = document.getElementById("heading-part");
 // populate the heading part with charSheet var
 headingPartVar.innerHTML = headingPart;
 
+if (img) {
+  document.getElementsByClassName("char-avatar")[0].src = img;
+}
 // Populate ability points section
 const abilityPoints =
   `
 <div class="ab-point border">
-  <p>str</p>
+  <p class="underline">str</p>
   <p class="f-modifier">${strMod}</p>
   <p class="ab-border f-total">${str}</p>
 </div>
 <div class="ab-point border">
-  <p>dex</p>
+  <p class="underline">dex</p>
   <p class="f-modifier">${dexMod}</p>
   <p class="ab-border f-total">${dex}</p>
 </div>
 <div class="ab-point border">
-  <p>con</p>
+  <p class="underline">con</p>
   <p class="f-modifier">${conMod}</p>
   <p class="ab-border f-total">${con}</p>
 </div>
 <div class="ab-point border">
-  <p>int</p>
+  <p class="underline">int</p>
   <p class="f-modifier">${intMod}</p>
   <p class="ab-border f-total">${int}</p>
 </div>
 <div class="ab-point border">
-  <p>wis</p>
+  <p class="underline">wis</p>
   <p class="f-modifier">${wisMod}</p>
   <p class="ab-border f-total">${wis}</p>
 </div>
 <div class="ab-point border">
-  <p>char</p>
+  <p class="underline">char</p>
   <p class="f-modifier">${charMod}</p>
   <p class="ab-border f-total">${char}</p>
 </div>
@@ -156,13 +158,13 @@ function getSaving(s = 0, d = 0, c = 0, i = 0, w = 0, ch = 0) {
 // Populate the savings throws section 
 const savingThrows =
   `
-<p> ${+strMod + getSaving().s} Strength</p>
-<p> ${+dexMod + getSaving().d} Dexterity</p>
-<p> ${+conMod + getSaving().c} Constitution</p>
-<p> ${+intMod + getSaving().i} Intelligence</p>
-<p> ${+wisMod + getSaving().w} Wisdom</p>
-<p> ${+charMod + getSaving().ch} Charisma</p>
-<p>saving throws</p>
+<p> <span class="underline">${+strMod + getSaving().s}</span> Strength</p>
+<p> <span class="underline">${+dexMod + getSaving().d}</span> Dexterity</p>
+<p> <span class="underline">${+conMod + getSaving().c}</span> Constitution</p>
+<p> <span class="underline">${+intMod + getSaving().i}</span> Intelligence</p>
+<p> <span class="underline">${+wisMod + getSaving().w}</span> Wisdom</p>
+<p> <span class="underline">${+charMod + getSaving().ch}</span> Charisma</p>
+<p class="text-align-center grey-color underline">saving throws</p>
 `;
 
 // Grab the savings throws div
@@ -246,12 +248,12 @@ function featuresDiv() {
       `
     <h3>Class Features</h3>
     <p>Hit Points at 1st Level: 10 + your Constitution modifier</p>
-    <p>Proficiency</p>
+    <p class="underline">Proficiency</p>
     <ul>
       <li class="profskills">${fighterSkill1}</li>
       <li class="profskills">${fighterSkill2}</li>
     </ul>
-    <p>Fighting style</p>
+    <p class="underline">Fighting style</p>
     <p>
     You adopt a particular style of fighting as your specialty. Choose one of the following options. 
     You can’t take a Fighting Style option more than once, even if you later get to choose again.
@@ -259,7 +261,7 @@ function featuresDiv() {
     <ul>
       <li>${fighterStyle}</li>
     </ul>
-    <p>Second wind</p>
+    <p class="underline">Second wind</p>
     <p>
       You have a limited well of stamina that you can draw on to protect yourself from harm.
       On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. 
@@ -272,24 +274,24 @@ function featuresDiv() {
       `
     <h3>Class Features</h3>
     <p>Hit Points at 1st Level: 8 + your Constitution modifier</p>
-    <p>Proficiency</p>
+    <p class="underline">Proficiency</p>
     <ul>
       <li class="profskills">${rangerSkill1}</li>
       <li class="profskills">${rangerSkill2}</li>
       <li class="profskills">${rangerSkill3}</li>
     </ul>
-    <p>Favored Enemy</p>
+    <p class="underline">Favored Enemy</p>
     <p>
     Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy.
     </p>
     <ul>
       <li>${favoredEnemy}</li>
     </ul>
-    <p>Language</p>
+    <p class="underline">Language</p>
     <ul>
       <li>${language}</li>
     </ul>
-    <p>Natural Explorer</p>
+    <p class="underline">Natural Explorer</p>
     <p>
     You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions.
     </p>
@@ -303,14 +305,14 @@ function featuresDiv() {
       `
     <h3>Class Features</h3>
     <p>Hit Points at 1st Level: 8 + your Constitution modifier</p>
-    <p>Proficiency</p>
+    <p class="underline">Proficiency</p>
     <ul>
       <li class="profskills">${rogueSkill1}</li>
       <li class="profskills">${rogueSkill2}</li>
       <li class="profskills">${rogueSkill3}</li>
       <li class="profskills">${rogueSkill4}</li>
     </ul>
-    <p>Expertise</p>
+    <p class="underline">Expertise</p>
     <p>
     Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.
     </p>
@@ -318,14 +320,13 @@ function featuresDiv() {
       <li>${expertise1}</li>
       <li>${expertise2}</li>
     </ul>
-    
-    <p>Sneak Attack</p>
+    <p class="underline">Sneak Attack</p>
     <p>
     Beginning at 1st level, you know how to strike subtly and exploit a foe’s distraction. 
     Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. 
     The attack must use a finesse or a ranged weapon.
     </p>
-    <p>Thieve's Cant</p>
+    <p class="underline">Thieve's Cant</p>
     <p>
     During your rogue training you learned thieves’ cant, a secret mix of dialect, jargon, 
     and code that allows you to hide messages in seemingly normal conversation. 
@@ -339,23 +340,23 @@ function featuresDiv() {
       `
     <h3>Class Features</h3>
     <p>Hit Points at 1st Level: 6 + your Constitution modifier</p>
-    <p>Proficiency</p>
+    <p class="underline">Proficiency</p>
     <ul>
       <li class="profskills">${sorcereSkill1}</li>
       <li class="profskills">${sorcereSkill2}</li>
     </ul>
-    <p>Spellcasting</p>
+    <p class="underline">Spellcasting</p>
     <p>
     An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, 
     infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.
     </p>
-    <p>Cantrips</p>
+    <p class="underline">Cantrips</p>
     <p>
     At 1st level, you know four cantrips of your choice from the sorcerer spell list. 
     You learn additional sorcerer cantrips of your choice at higher levels, 
     as shown in the Cantrips Known column of the Sorcerer table.
     </p>
-    <p>Spell Slots</p>
+    <p class="underline">Spell Slots</p>
     <p>
     The Sorcerer table shows how many spell slots you have to cast your sorcerer spells of 1st level and higher. 
     To cast one of these sorcerer spells, you must expend a slot of the spell’s level or higher. 
@@ -386,7 +387,7 @@ function racialTraits() {
       `
     <h3>Racial Traits</h3>
     <p>+1 to All Ability Scores</p>
-    <p>Languages</p>
+    <p class="underline">Languages</p>
     <p>You can speak, read, and write Common and one extra language.</p>
     <ul>
       <li>${extraLang}</li>
@@ -398,15 +399,15 @@ function racialTraits() {
       `
     <h3>Racial Traits</h3>
     <p>+2 Dexterity</p>
-    <p>Darkvision</p>
+    <p class="underline">Darkvision</p>
     <p>Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions</p>
-    <p>Keen Senses</p>
+    <p class="underline">Keen Senses</p>
     <p>You have proficiency in the Perception skill.</p>
-    <p>Fey Ancestry</p>
+    <p class="underline">Fey Ancestry</p>
     <p>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</p>
-    <p>Trance</p>
+    <p class="underline">Trance</p>
     <p>Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day.</p>
-    <p>Cantrip</p>
+    <p class="underline">Cantrip</p>
     <p>You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.</p>
     <ul>
       <li>${cantrip}</li>
@@ -422,11 +423,11 @@ function racialTraits() {
       `
     <h3>Racial Traits</h3>
     <p>+2 Dexterity</p>
-    <p>Lucky</p>
+    <p class="underline">Lucky</p>
     <p>When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</p>
-    <p>Brave</p>
+    <p class="underline">Brave</p>
     <p>You have advantage on saving throws against being frightened.</p>
-    <p>Halfling Nimbleness</p>
+    <p class="underline">Halfling Nimbleness</p>
     <p>You can move through the space of any creature that is of a size larger than yours.</p>
     `;
   }
@@ -435,18 +436,18 @@ function racialTraits() {
       `
     <h3>Racial Traits</h3>
     <p>+2 Constitution</p>
-    <p>Darkvision</p>
+    <p class="underline">Darkvision</p>
     <p>Accustomed to life underground, you have superior vision in dark and dim conditions.</p>
-    <p>Dwarven Resilience</p>
+    <p class="underline">Dwarven Resilience</p>
     <p>You have advantage on saving throws against poison, and you have resistance against poison damage</p>
-    <p>Tool Proficiency</p>
+    <p class="underline">Tool Proficiency</p>
     <p>You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.</p>
     <ul>
       <li>${toolProf}</li>
     </ul>
-    <p>Dwarven Combat Training</p>
+    <p class="underline">Dwarven Combat Training</p>
     <p>You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.</p>
-    <p>Stonecunning</p>
+    <p class="underline">Stonecunning</p>
     <p>
       Whenever you make an Intelligence (History) check related to the origin of stonework, 
       you are considered proficient in the History skill and add double your proficiency bonus to the check, 
@@ -563,11 +564,11 @@ function backgroundDesc() {
 const description =
   `
 <h3>Background</h3>
-<p>${background}</p>
+<p class="underline">${background}</p>
 <p id="background-desc">${backgroundDesc().backgroundDescVar}</p>
-<p>Proficiency</p>
+<p class="underline">Proficiency</p>
 <ul>${backgroundDesc().proficiencyVar}</ul>
-<p>Characteristics</p>
+<p class="underline">Characteristics</p>
 <table>
   <tr>
     <th>Alignment</th>
@@ -583,6 +584,7 @@ const description =
     <td>${lifestyle}</td>
     <td>${height}</td>
   </tr>
+  <tr><td class="pt-1"></td></tr>
   <tr>
     <th>Faith</th>
     <th>Hair</th>
@@ -611,19 +613,19 @@ descriptionDiv.innerHTML = description;
 const equipmentVar =
   `
 <h3>Your starting equipment</h3>
-<p>Main Weapon</p>
+<p class="underline">Main Weapon</p>
 <ul>
   <li>${mWeapon}</li>
 </ul>
-<p>Secondary Weapon</p>
+<p class="underline">Secondary Weapon</p>
 <ul>
   <li>${sWeapon}</li>
 </ul>
-<p>Potions</p>
+<p class="underline">Potions</p>
 <ul>
   <li>${potions}</li>
 </ul>
-<p>Other Stuff</p>
+<p class="underline">Other Stuff</p>
 <ul>
   <li>${stuff}</li>
 </ul>
@@ -693,33 +695,33 @@ profDiv.innerHTML = profVarFunc();
 // Create the skills div variable
 const skillsVar =
   `
-<p><span class="circle"></span><span class="dex">${dexMod}</span> <span class="skill">Acrobatics</span> <span class="ab-skill">(Dex)</span>
+<p><span class="circle"></span><span class="dex underline">${dexMod}</span> <span class="skill">Acrobatics</span> <span class="ab-skill">(Dex)</span>
 </p>
-<p><span class="circle"></span><span class="wis">${wisMod}</span> <span class="skill">Animal Handling</span> <span
+<p><span class="circle"></span><span class="wis underline">${wisMod}</span> <span class="skill">Animal Handling</span> <span
     class="ab-skill">(Wis)</span></p>
-<p><span class="circle"></span><span class="int">${intMod}</span> <span class="skill">Arcana</span> <span class="ab-skill">(Int)</span></p>
-<p><span class="circle"></span><span class="str">${strMod}</span> <span class="skill">Athletics</span> <span class="ab-skill">(Str)</span></p>
-<p><span class="circle"></span><span class="cha">${charMod}</span> <span class="skill">Deception</span> <span class="ab-skill">(Cha)</span></p>
-<p><span class="circle"></span><span class="int">${intMod}</span> <span class="skill">History</span> <span class="ab-skill">(Int)</span></p>
-<p><span class="circle"></span><span class="wis">${wisMod}</span> <span class="skill">Insight</span> <span class="ab-skill">(Wis)</span></p>
-<p><span class="circle"></span><span class="cha">${charMod}</span> <span class="skill">Intimidation</span> <span class="ab-skill">(Cha)</span>
+<p><span class="circle"></span><span class="int underline">${intMod}</span> <span class="skill">Arcana</span> <span class="ab-skill">(Int)</span></p>
+<p><span class="circle"></span><span class="str underline">${strMod}</span> <span class="skill">Athletics</span> <span class="ab-skill">(Str)</span></p>
+<p><span class="circle"></span><span class="cha underline">${charMod}</span> <span class="skill">Deception</span> <span class="ab-skill">(Cha)</span></p>
+<p><span class="circle"></span><span class="int underline">${intMod}</span> <span class="skill">History</span> <span class="ab-skill">(Int)</span></p>
+<p><span class="circle"></span><span class="wis underline">${wisMod}</span> <span class="skill">Insight</span> <span class="ab-skill">(Wis)</span></p>
+<p><span class="circle"></span><span class="cha underline">${charMod}</span> <span class="skill">Intimidation</span> <span class="ab-skill">(Cha)</span>
 </p>
-<p><span class="circle"></span><span class="int">${intMod}</span> <span class="skill">Investigation</span> <span class="ab-skill">(Int)</span>
+<p><span class="circle"></span><span class="int underline">${intMod}</span> <span class="skill">Investigation</span> <span class="ab-skill">(Int)</span>
 </p>
-<p><span class="circle"></span><span class="wis">${wisMod}</span> <span class="skill">Medicine</span> <span class="ab-skill">(Wis)</span></p>
-<p><span class="circle"></span><span class="int">${intMod}</span> <span class="skill">Nature</span> <span class="ab-skill">(Int)</span></p>
-<p><span class="circle"></span><span class="wis">${wisMod}</span> <span class="skill">Perception</span> <span class="ab-skill">(Wis)</span>
+<p><span class="circle"></span><span class="wis underline">${wisMod}</span> <span class="skill">Medicine</span> <span class="ab-skill">(Wis)</span></p>
+<p><span class="circle"></span><span class="int underline">${intMod}</span> <span class="skill">Nature</span> <span class="ab-skill">(Int)</span></p>
+<p><span class="circle"></span><span class="wis underline">${wisMod}</span> <span class="skill">Perception</span> <span class="ab-skill">(Wis)</span>
 </p>
-<p><span class="circle"></span><span class="cha">${charMod}</span> <span class="skill">Perfomance</span> <span class="ab-skill">(Cha)</span>
+<p><span class="circle"></span><span class="cha underline">${charMod}</span> <span class="skill">Perfomance</span> <span class="ab-skill">(Cha)</span>
 </p>
-<p><span class="circle"></span><span class="cha">${charMod}</span> <span class="skill">Persuasion</span> <span class="ab-skill">(Cha)</span>
+<p><span class="circle"></span><span class="cha underline">${charMod}</span> <span class="skill">Persuasion</span> <span class="ab-skill">(Cha)</span>
 </p>
-<p><span class="circle"></span><span class="int">${intMod}</span> <span class="skill">Religion</span> <span class="ab-skill">(Int)</span></p>
-<p><span class="circle"></span><span class="dex">${dexMod}</span> <span class="skill">Sleight of Hand</span> <span
+<p><span class="circle"></span><span class="int underline">${intMod}</span> <span class="skill">Religion</span> <span class="ab-skill">(Int)</span></p>
+<p><span class="circle"></span><span class="dex underline">${dexMod}</span> <span class="skill">Sleight of Hand</span> <span
     class="ab-skill">(Dex)</span></p>
-<p><span class="circle"></span><span class="dex">${dexMod}</span> <span class="skill">Stealth</span> <span class="ab-skill">(Dex)</span></p>
-<p><span class="circle"></span><span class="wis">${wisMod}</span> <span class="skill">Survival</span> <span class="ab-skill">(Wis)</span></p>
-
+<p><span class="circle"></span><span class="dex underline">${dexMod}</span> <span class="skill">Stealth</span> <span class="ab-skill">(Dex)</span></p>
+<p><span class="circle"></span><span class="wis underline">${wisMod}</span> <span class="skill">Survival</span> <span class="ab-skill">(Wis)</span></p>
+<p class="underline grey-color text-align-center">Skills</p>
 `;
 
 // Get the skill div
@@ -740,4 +742,3 @@ for (let i = 0; i < skill.length; i++) {
   }
 }
 
-document.getElementsByClassName("char-avatar")[0].src = img;

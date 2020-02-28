@@ -10,6 +10,7 @@
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
   <link rel="stylesheet" href="character_sheet.css" />
   <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="media-main.css" />
   <title>Create Your Character</title>
 </head>
 
@@ -19,7 +20,7 @@
     <div class="nav-container container">
       <a href="index.html" class="nav-logo"><span class="jkss">Jkss</span><span class="world">World</span></a>
       <div class="nav-items">
-        <a href="#" class="nav-item">HOW TO PLAY</a>
+        <a href="index.html" class="nav-item">HOME</a>
         <a href="create_character_form.html" class="nav-item">CHARACTERS</a>
         <a href="#" class="nav-item">EMPTY</a>
         <a href="#" class="nav-item">EMPTY</a>
@@ -51,7 +52,7 @@
           <div id="ac-in-sp-hp" class="ac-init-speed row"></div>
           <!-- Tab with many things -->
           <div class="tab-container border">
-            <div class="buttons">
+            <div class="buttons text-align-center">
               <button type="button" class="btn-tab" onclick="openTab(event, 'featuresTraits')" id="defaultOpen">Features
                 and
                 Traits</button>
@@ -59,11 +60,13 @@
               <button type="button" class="btn-tab" onclick="openTab(event, 'equipment')">Equipment</button>
               <button type="button" class="btn-tab" onclick="openTab(event, 'proficiencies')">Proficiencies</button>
             </div>
+            <hr>
             <!-- Tab contents -->
             <!-- traits and features div -->
             <div id="featuresTraits" class="tabcontent">
               <!-- class features -->
               <div id="class-features"></div>
+              <hr>
               <!-- traits -->
               <div id="race-traits"></div>
             </div>
@@ -96,7 +99,6 @@
       </div>
     </div>
   </section>
-  <!-- <script src="test.js"></script> -->
   <script src="character_sheet.js"></script>
 </body>
 
