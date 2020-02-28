@@ -21,7 +21,7 @@
     <div class="nav-container container">
       <a href="index.html" class="nav-logo"><span class="jkss">Jkss</span><span class="world">World</span></a>
       <div class="nav-items">
-        <a href="#" class="nav-item">HOW TO PLAY</a>
+        <a href="index.html" class="nav-item">HOME</a>
         <a href="create_character_form.html" class="nav-item">CHARACTERS</a>
         <a href="#" class="nav-item">EMPTY</a>
         <a href="#" class="nav-item">EMPTY</a>
@@ -61,6 +61,7 @@
                         <div class="traits">
                           <p>+1 to All Ability Scores</p>
                           <label for="language">Extra Language</label>
+                          <br>
                           <select name="extra-language" id="language">
                             <option value="none">- Choose a Language -</option>
                             <option value="Abyssal">Abyssal</option>
@@ -146,7 +147,7 @@
                         <img id="class-img" src="./img/form_img/fighter.jpeg" alt="" />
                       </div>
                     </div>
-                    <div class="col-50">
+                    <div class="col-50 pr-1">
                       <div class="class-features">
                         <div class="features">
                           <h3>Class features</h3>
@@ -179,7 +180,7 @@
                       <p><span class="main-color">Saving Throws:</span> Strength, Constitution</p>
                       <p><span class="main-color">Skills:</span> Choose two skills from Acrobatics, Animal Handling,
                         Athletics, History, Insight, Intimidation, Perception, and Survival</p>
-                      <select name="fighter-skill-1">
+                      <select name="fighter-skill-1" required>
                         <option value="none">- Choose a Fighter Skill -</option>
                         <option value="Acrobatics">Acrobatics</option>
                         <option value="Animal Handling">Animal Handling</option>
@@ -191,7 +192,7 @@
                         <option value="Survival">Survival</option>
                       </select>
                       <br>
-                      <select name="fighter-skill-2">
+                      <select name="fighter-skill-2" required>
                         <option value="none">- Choose a Fighter Skill -</option>
                         <option value="Acrobatics">Acrobatics</option>
                         <option value="Animal Handling">Animal Handling</option>
@@ -209,7 +210,7 @@
                         You adopt a particular style of fighting as your specialty. Choose one of the following options.
                         You can’t take a Fighting Style option more than once, even if you later get to choose again.
                       </p>
-                      <select name="fighter-style">
+                      <select name="fighter-style" required>
                         <option value="none">- Choose an Option -</option>
                         <option value="Archery">Archery</option>
                         <option value="Defence">Defence</option>
@@ -534,11 +535,11 @@
                 <div class="name-group">
                   <label for="char-name">Character Name</label>
                   <br>
-                  <input type="text" name="char-name" id="char-name" placeholder="Write Your Name...">
+                  <input type="text" name="char-name" id="char-name" placeholder="Write Your Name..." required>
                 </div>
               </div>
               <h2 class="text-align-center">Background</h2>
-              <select name="background" id="background" oninput="myDescription()">
+              <select name="background" id="background" oninput="myDescription()" required>
                 <option value="none">--Choose an Option--</option>
                 <option value="Acolyte">Acolyte</option>
                 <option value="Criminal/Spy">Criminal/Spy</option>
@@ -547,15 +548,13 @@
                 <option value="Sage">Sage</option>
                 <option value="Soldier">Soldier</option>
               </select>
-              <div class="desc-description">
-
-              </div>
+              <div class="desc-description"></div>
               <hr>
               <button class="accordion char-det">Character Details</button>
               <div class="acc-body">
                 <label for="alignment">Alignment</label>
                 <br>
-                <select name="alignment" id="alignment">
+                <select name="alignment" id="alignment" required>
                   <option value="none">- Choose an Option -</option>
                   <option value="Chaotic Evil">Chaotic Evil</option>
                   <option value="Chaotic Good">Chaotic Good</option>
@@ -570,11 +569,11 @@
                 <br>
                 <label for="faith">Faith</label>
                 <br>
-                <input type="text" name="faith" id="faith">
+                <input type="text" name="faith" id="faith" required>
                 <br>
                 <label for="lifestyle">Lifestyle</label>
                 <br>
-                <select name="lifestyle" id="lifestyle">
+                <select name="lifestyle" id="lifestyle" required>
                   <option value="none">- Choose a Lifestyle -</option>
                   <option value="Wretched">Wretched</option>
                   <option value="Squalid">Squalid</option>
@@ -589,31 +588,31 @@
               <div class="acc-body">
                 <label for="hair">Hair</label>
                 <br>
-                <input type="text" name="hair" id="hair">
+                <input type="text" name="hair" id="hair" required>
                 <br>
                 <label for="skin">Skin</label>
                 <br>
-                <input type="text" name="skin" id="skin">
+                <input type="text" name="skin" id="skin" required>
                 <br>
                 <label for="eyes">Eyes</label>
                 <br>
-                <input type="text" name="eyes" id="eyes">
+                <input type="text" name="eyes" id="eyes" required>
                 <br>
                 <label for="height">Height</label>
                 <br>
-                <input type="text" name="height" id="height">
+                <input type="text" name="height" id="height" required>
                 <br>
                 <label for="weight">Weight(kg)</label>
                 <br>
-                <input type="text" name="weight" id="weight">
+                <input type="text" name="weight" id="weight" required>
                 <br>
                 <label for="age">Age</label>
                 <br>
-                <input type="text" name="age" id="age">
+                <input type="text" name="age" id="age" required>
                 <br>
                 <label for="gender">Gender</label>
                 <br>
-                <input type="text" name="gender" id="gender">
+                <input type="text" name="gender" id="gender" required>
                 <br>
               </div>
             </div>
@@ -720,39 +719,6 @@
     </div>
   </section>
   <script src="create_character_form.js"></script>
-  <script type="module">
-    import { http } from "./http.js";
-
-    let avatarImgs = document.getElementsByClassName("avatar-img");
-
-    for (let i = 0; i < avatarImgs.length; i++) {
-      avatarImgs[i].addEventListener("click", function chooseImg() {
-
-        let plusIcon = document.getElementsByClassName("img-icon")[0];
-        let mainAvatar = document.getElementsByClassName("main-avatar")[0];
-        let hidInput = document.getElementById("hidden-input");
-        plusIcon.style.display = "none";
-        mainAvatar.style.filter = "unset";
-        mainAvatar.src = avatarImgs[i].src;
-        hidInput.value = avatarImgs[i].src;
-        modal.style.display = "none";
-        // test
-
-
-
-        let imgsrc = mainAvatar.src;
-        const data = {
-          imgsrc
-        }
-
-        http.post('http://localhost:3000/src', data)
-          .then()
-          .catch(err => console.log(err))
-
-      });
-    }
-
-  </script>
 </body>
 
 </html>

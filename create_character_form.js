@@ -1206,20 +1206,16 @@ closeModal.onclick = function () {
 // Choose the picture and set it as an avatar
 // Get the imgs
 let avatarImgs = document.getElementsByClassName("avatar-img");
-// add eventlistener to the imgs and chenge the main avatar img and get rid of other stuff
-// Create a function that will change src of the chosen img
 
-// for (let i = 0; i < avatarImgs.length; i++) {
-//   avatarImgs[i].addEventListener("click", function chooseImg() {
-//     let plusIcon = document.getElementsByClassName("img-icon")[0];
-//     let mainAvatar = document.getElementsByClassName("main-avatar")[0];
-//     plusIcon.style.display = "none";
-//     mainAvatar.style.filter = "unset";
-//     mainAvatar.src = avatarImgs[i].src;
-//     modal.style.display = "none";
-//     // test
-
-
-//   });
-
-// }
+for (let i = 0; i < avatarImgs.length; i++) {
+  avatarImgs[i].addEventListener("click", function chooseImg() {
+    let plusIcon = document.getElementsByClassName("img-icon")[0];
+    let mainAvatar = document.getElementsByClassName("main-avatar")[0];
+    let hidInput = document.getElementById("hidden-input");
+    plusIcon.style.display = "none";
+    mainAvatar.style.filter = "unset";
+    mainAvatar.src = avatarImgs[i].src;
+    hidInput.value = avatarImgs[i].src;
+    modal.style.display = "none";
+  });
+}
